@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
 
+type ChecklistItem = { key: string; label: string; required?: boolean };
+type ChecklistResponse = { questions?: ChecklistItem[] };
+
 export default function HzzPage() {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<ChecklistResponse | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,11 +20,11 @@ export default function HzzPage() {
       headers: { "content-type": "application/json" },
       body: JSON.stringify(payload),
     });
-    setData(await res.json());
+    const json: ChecklistResponse = await res.json();
+    setData(json);
   }
 
   async function pay() {
-    // dummy checkout za sad
     window.location.href = "/hzz/pro?trial=7";
   }
 
@@ -35,11 +38,13 @@ export default function HzzPage() {
         <button type="submit" className="border px-4 py-2">Generiraj checklist</button>
       </form>
 
-      {data && (
+      {data?.questions && (
         <div className="border p-3 rounded">
           <h2 className="text-xl font-medium mb-2">Checklist</h2>
           <ul className="list-disc ml-5">
-            {data.questions?.map((q: any) => <li key={q.key}>{q.label}</li>)}
+            {data.questions.map((q: ChecklistItem) => (
+              <li key={q.key}>{q.label}</li>
+            ))}
           </ul>
           <button onClick={pay} className="mt-4 border px-4 py-2">Otključaj PRO (trial)</button>
         </div>
