@@ -1,43 +1,40 @@
 // app/hzz/components/SectionForm.tsx
-import { useFormStore } from "../lib/formStore";
-import { getSectionConfig } from "../lib/hzzSchema";
+"use client";
 
-export default function SectionForm({
-  side,
-  sectionId,
-}: {
-  side: "left" | "right";
-  sectionId: string;
-}) {
-  const { dataLeft, dataRight, updateField } = useFormStore();
-  const section = getSectionConfig(sectionId);
-  const values = side === "left" ? dataLeft[sectionId] : dataRight[sectionId];
+import React from "react";
+import { FieldControl } from "./FieldControl";
+
+export type UiField = { name: string; label: string; long?: boolean; required?: boolean; placeholder?: string };
+
+type Props = {
+  fields: UiField[];
+  values: Record<string, string>;
+  hints?: Record<string, string>; // { [fieldName]: "Nedostaje…" }
+  onChange: (name: string, value: string) => void;
+};
+
+export function SectionForm({ fields, values, hints, onChange }: Props) {
+  const missingCount = fields.reduce((acc, f) => (hints?.[f.name] ? acc + 1 : acc), 0);
 
   return (
-    <div className="space-y-3">
-      <h2 className="font-semibold">{section.label}</h2>
-      {section.fields.map(f => {
-        const val = values?.[f.key] ?? "";
-        const placeholder =
-          side === "right" && !val
-            ? f.example ?? "" // placeholder iz primjera nakon obrade
-            : f.placeholder ?? "";
+    <div>
+      {missingCount > 0 && (
+        <div className="mb-3 text-xs rounded border border-orange-200 bg-orange-50 text-orange-800 px-2.5 py-2">
+          Nedostaje {missingCount} polja. Pogledaj označena polja s oznakom <b>Missing</b>.
+        </div>
+      )}
 
-        // "missing" naglasi crveno u desnom panelu
-        const missing = side === "right" && !val;
-
-        return (
-          <div key={f.key}>
-            <label className="block text-sm font-medium mb-1">{f.label}</label>
-            <input
-              value={val}
-              onChange={(e) => updateField(side, sectionId, f.key, e.target.value)}
-              placeholder={placeholder}
-              className={`w-full rounded border px-3 py-2 ${missing ? "placeholder-red-600 text-red-700/90" : ""}`}
-            />
-          </div>
-        );
-      })}
+      {fields.map((f) => (
+        <FieldControl
+          key={f.name}
+          label={f.label}
+          long={f.long}
+          value={values[f.name] ?? ""}
+          placeholder={f.placeholder}
+          missingText={hints?.[f.name]}
+          onChange={(val) => onChange(f.name, val)}
+        />
+      ))}
     </div>
   );
 }
