@@ -99,23 +99,56 @@ export default function HzzPage() {
     setCvB64(b64);
   }
 
-  // STUB: za sada puni desnu stranu iz postojećih primjera; u Koraku 2 ovdje ide poziv n8n/LLM-a
-  async function generateFromBrief() {
-    setIsGenerating(true);
-    try {
-      // reset desnih vrijednosti
-      UI_SECTIONS.forEach((s) => setRight(s.id, blankFor(s.id), {} as any));
-      // popuni iz exampleFor
-      for (const s of UI_SECTIONS) {
-        const ex = exampleFor(s.id) || {};
-        setRight(s.id, { ...ex });
-      }
-      // fokus na prvu sekciju
-      setActive(UI_SECTIONS[0]?.id ?? "1");
-    } finally {
-      setIsGenerating(false);
+
+// N8N & LLM Intergacija
+async function generateFromBrief() {
+  setIsGenerating(true);
+  try {
+    // šaljemo “mršavu” strukturu (id, title, field name) + PRIMJERE
+    const slim = UI_SECTIONS.map((s: any) => ({
+      id: s.id,
+      title: s.title,
+      fields: s.fields.map((f: any) => ({ name: f.name })),
+    }));
+
+    const examples = Object.fromEntries(
+      UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
+    );
+
+    const res = await fetch("/api/hzz/generate", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ brief, cvB64, sections: slim, examples }),
+    });
+
+    if (!res.ok) {
+      const txt = await res.text();
+      alert(`Greška pri generiranju: ${txt}`);
+      return;
     }
+
+    const json = await res.json();
+    const byId = json?.sections || {};
+
+    // reset desnih vrijednosti
+    UI_SECTIONS.forEach((s: any) => setRight(s.id, blankFor(s.id), {} as any));
+
+    // upiši vraćene vrijednosti po sekcijama
+    for (const s of UI_SECTIONS as any[]) {
+      const r = byId[s.id];
+      if (r?.values) {
+        setRight(s.id, r.values, r.hints || {});
+      }
+    }
+
+    setActive(UI_SECTIONS[0]?.id ?? "1");
+  } finally {
+    setIsGenerating(false);
   }
+}
+
+
+
 
   // derived (desni panel)
   const section = getSection(active);
