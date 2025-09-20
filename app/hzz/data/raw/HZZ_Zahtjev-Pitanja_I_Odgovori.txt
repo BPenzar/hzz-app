@@ -1,0 +1,549 @@
+
+
+HZZ Zahtjev Agent
+
+Zahtjev za dodjelu potpore male vrijednosti u svrhu samozapošljavanja
+
+
+1.) Podaci o podnositelju zahtjeva
+
+Odaberite nadležni područni ured za koji želite podnijeti zahtjev (*Odabir treba biti vezan uz mjesto gdje želite otvoriti poduzeće, a mjesto je u nadležnosti odabranog područnog ureda)
+„Područna služba ZAGREB“
+
+Ime
+„BRUNO SEBASTIAN“
+
+Prezime
+„PENZAR“
+
+OIB
+„00357376233“
+
+Zanimanje
+„Programer računalnih aplikacija.“
+
+Datum rođenja
+„28.10.1993.“
+
+Adresa prebivališta (ulica i broj)
+„Ulica Đure Crnatka 24“
+
+Grad/mjesto prebivališta
+„10 000 Zagreb“
+
+Kontakt (telefon/mobitel)
+„+385 97 611 2569“
+
+Kontakt (e-mail)
+„penzar.bruno@gmail.com“
+
+Osnovna škola (mjesto i godina završetka)
+„August-Gräser-Schule (Frankfurt na Majni, Njemačka, 2004.)“
+
+Srednja škola (naziv škole i godina završetka)
+„Schillerschule - Opća gimnazija (Frankfurt na Majni, Njemačka, 2012.)“
+
+Fakultet, magisterij, doktorat (naziv obrazovne ustanove i godina stjecanja diplome)
+„Sveučilište u Kölnu - Znanosti o medijama (medijske informatike) - Sveučilišni prvostupnik (Köln, 2018.)“
+
+Osposobljavanje i usavršavanje (koje ste završili)
+„- 01.07.2018.–30.06.2019. — Studentski asistent, Sveučilište u Kölnu:
+Praktično usavršavanje u razvoju softvera. Razvoj softvera za digitalne zbirke (3D modeliranje i kolaborativno uređivanje). Razvoj i implementacija komunikacijskog sučelja za suradnju pri radu na objektima.
+- 01.12.2022.–31.08.2025. — Voditelj administracije i objekata (od 05.2024.),  Teleperformance HRV d.o.o.:
+Vođenje administrativnog tima (do 7 članova). Podrška 400+ zaposlenicima. Tjedna koordinacija ostalih support odjela. Pokrenuo i vodio Business Intelligence projekt za zadovoljstvo i zadržavanje zaposlenika (ankete zadovoljstva, exit intervjui, Flight Risk izvješća) te izgradio Power BI platformu za prikupljanje, obradu i vizualizaciju tih podataka (7.000+ unosa) s izravnim utjecajem na operativno odlučivanje.“
+
+Završene edukacije za vođenje poslovanja (kao što je npr. računovodstvo, marketing, prodaja, itd. ili neku drugu vrstu edukacije koju smatrate bitnim za poslovanje)
+„-COPC LSS Yellow Belt Certification — certifikat iz područja operativne izvrsnosti i unapređenja procesa (Lean Six Sigma, COPC).
+- Nagrada: Digital Humanities Award (Sveučilište u Kölnu, 2017.) za angažman i sklonost novim tehnologijama.“
+
+Hobiji i drugi interesi
+„- Razvoj igara i umjetnosti uz nove tehnologije (slike s AI rješenjima; senzorske interaktivne igračke na Arduinu i sl.).
+- Nogomet (rekreativno), trčanje.“
+
+Radionica za samozapošljavanje (upišite datum i mjesto)
+„14.07.2025. (09:30-11:30), U ZAGREBU“
+
+Prethodno poduzetničko iskustvo
+Naziv poslovnog subjekta (*Popunjavaju osobe koje su prethodno imale registriran poslovni subjekt)
+„“
+
+OIB poslovnog subjekta
+„“
+
+Djelatnost
+„“
+
+Status
+„(  )vlasnik/ca; (  )suvlasnik/ca“
+
+Aktivan od
+„“
+
+Aktivan do
+„“
+
+Podmirene obveze
+„(  )Da; (  )Ne“
+
+Koristio/la sredstva HZZ-a
+„(  )Da; (  )Ne“
+
+Razlog prestanka obavljanja djelatnosti
+„“
+
+
+2.) Opći podaci o budućem subjektu
+
+Vrsta poslovnog subjekta (*označite vrstu poslovnog subjekta koji planirate registrirati)
+„(  )d.o.o./j.d.o.o.; (  )obrt s paušalnim oporezivanjem; (  )obrt – poslovne knjige; (  ) samostalna djelatnost; (  )ostalo“
+
+Struktura vlasništva budućeg poslovnog subjekta
+„(  )Jedan vlasnik; (  )Suvlasništvo: poslovni udjeli (u postotku):
+* Ukoliko ste odabrali suvlasništvo, unesite poslovne udjele u postocima.
+Ime i prezime	Postotak“
+
+Sjedište budućeg poslovnog subjekta (mjesto/grad)
+„Ulica Đure Crnatka 24, 10 000 Zagreb“
+
+Unos djelatnosti prema Nacionalnoj klasifikaciji djelatnosti (dalje u tekstu NKD)
+„(započnite unos… X(Dodaj))
+Odabrani NKD-ovi	
+TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Ostalo računalno programiranje ( 62109 )	
+TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Računalno savjetovanje i djelatnosti upravljanja računalnom opremom ( 62200 )	
+TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Ostale uslužne djelatnosti u vezi s informacijskom tehnologijom i računalima ( 62900 )	
+TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Računalna infrastruktura, obrada podataka, usluge poslužitelja i povezane djelatnosti ( 63100 )	
+TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Djelatnosti internetskih portala ( 63910 )	
+TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Ostale informacijske uslužne djelatnosti ( 63920 )“
+
+Službeni popis svih djelatnosti možete vidjeti na poveznici:
+https://narodne-novine.nn.hr/clanci/sluzbeni/2024_04_47_800.html 
+
+Iznos tražene potpore: (*Upisati točan iznos tražene potpore)
+„6.966,02€“
+
+Neprihvatljive djelatnosti:
+(A) Poljoprivreda, šumarstvo i ribarstvo
+(B) Rudarstvo i vađenje
+(F) Građevinarstvo (skupina 43.6 Usluge posredovanja u pružanju specijaliziranih građevinskih usluga)
+(G) Trgovina na veliko i na malo
+(H) Prijevoz i skladištenje
+(I) Smještaj te priprema i usluživanje hrane
+(L) Financijske djelatnosti i djelatnosti osiguranja
+(M) Poslovanje nekretninama
+(N) Stručne, znanstvene i tehničke djelatnosti (skupina 69.1 Pravne djelatnosti)
+(O) Administrativne i pomoćne uslužne djelatnosti:
+ - odjeljak 77 Djelatnosti iznajmljivanja i davanja u zakup
+ - odjeljak 78 Djelatnosti zapošljavanja
+ - odjeljak 79 Putničke agencije, organizatori putovanja (turoperatori) i ostale rezervacijske usluge te djelatnosti povezane s njima
+(P) Javna uprava i obrana; obvezno socijalno osiguranje
+(S) Umjetnost, sport i rekreacija (razred 93.19 Sportske djelatnosti d.n.)
+(T) Ostale uslužne djelatnosti:
+ - odjeljak 94 Djelatnosti članskih organizacija
+ - skupina 95.4 Uslužne djelatnosti posredovanja u popravku i održavanju računala, predmeta za osobnu uporabu i kućanstvo te motornih vozila i motocikala
+ - skupina 96.4 Uslužne djelatnosti posredovanja u ostalim osobnim uslugama)
+(U) Djelatnosti kućanstava kao poslodavaca i djelatnosti kućanstava koja proizvode različitu robu i obavljaju različite usluge za vlastite potrebe
+(V) Djelatnosti izvanteritorijalnih organizacija i tijela
+
+
+3.) Poslovni plan
+
+3.1) Podaci o budućem poduzetniku i poslovnom subjektu
+
+Navedite kronološki dosadašnje radno iskustvo ostvareno temeljem ugovora o radu (*Navedite kronološki dosadašnje radno iskustvo)
+„Razdoblje zaposlenja	Poslodavac	Zanimanje - opis poslova	
+01.12.2022. - 30.09.2023.	Teleperformance HRV d.o.o.	Zanimanje: Front Desk Representative. Opis poslova: - Razvoj i uvođenje exit intervjua te anketa zadovoljstva zaposlenika u hrvatskoj podružnici, čime su osigurani ključni uvidi za inicijative i analizu fluktuacije. - Opći administrativni poslovi uz blisku suradnju s HR-om i regrutacijom.	
+01.10.2023. - 30.05.2024.	Teleperformance HRV d.o.o.	Zanimanje: Senior Front Desk Representative. Opis poslova: - Daljni razvoj "Attrition Pilota" uz uvođenje mjesečnih "Flight Risk Reporta" za zaposlenike, radi detaljnije analize. - Vođenje sedmeročlanog administrativnog tima za Hrvatsku (>400 zaposlenika).	
+31.05.2024. - 31.08.2025.	Teleperformance HRV d.o.o.	Zanimanje: Facilities and Administration Manager. Opis poslova: - Uspostava BI-“Attrition pilota” u aktivni sustav podrške operativnog odlučivanja, s bazom podataka i BI vizualizacijom (>500 exit intervjua, >600 ESAT intervjua i >6.000 zapisa u Flight Risk izvješću). - Izgradnja Server Sobe za Teleperformance Hrvatsku. - Otvaranje i osiguravanje operativne spremnosti nove lokacije (do 160 radnih mjesta) uz održavanje operativnosti postojeće lokacije. - Optimizacija administrativnog tima na 3 člana uz zadržavanje pune administrativne odgovornosti.- Koordinacija support odjela radi učinkovitije međufunkcionalne suradnje.
+(Dodaj novi red)„
+
+Navedite kronološki dosadašnje radno iskustvo ostvareno temeljem ugovora o djelu, studentskog ugovora, ugovora o volontiranju i/ili potvrde o vrsti poslova (*Navedite kronološki dosadašnje radno iskustvo)
+„Razdoblje zaposlenja	Poslodavac	Zanimanje - opis poslova	
+04.01.2016. - 30.04.2016	Gesis - Leibniz-Institut za društvene znanosti	Zanimanje: Studentski pomoćnik (prema §§ 2, 5 Zakona o ograničenju trajanja radnog odnosa u znanosti – WissZeitVG). Opis poslova: Postavljanje i konfiguriranje Docker okruženja za interne aplikacije (skriptiranje, izrada i održavanje Docker imagea/kontejnera).	
+01.07.2018. - 30.06.2019.	Universität zu Köln - Arheologija – Odjel za povijesno-kulturološku obradu informacija	Zanimanje: Znanstveni pomoćnik (prema §§ 2 i 5 Zakona o ograničenju trajanja radnog odnosa u znanosti – WissZeitVG). Opis poslova: Implementacija korisničkog komunikacijskog sučelja za suradnju na 3D objektima, u sklopu razvoja softvera za digitalne zbirke.	
+(Dodaj novi red)„
+
+
+3.2) Predmet poslovanja
+
+Navedite koju vrstu poslovnog subjekta namjeravate registrirati i za koju djelatnost
+„Paušalni obrt - Računalno programiranje (62109), TELEKOMUNIKACIJE, RAČUNALNO PROGRAMIRANJE, SAVJETOVANJE, RAČUNALNA INFRASTRUKTURA I OSTALE INFORMACIJSKE USLUŽNE DJELATNOSTI > Ostalo računalno programiranje ( 62109 )“
+
+Opišite kako ste došli na ideju o pokretanju vlastitog posla te povežite s dosadašnjim radnim iskustvom. Navedite zašto smatrate da Vi (i Vaši poslovni partneri) imate znanje i sposobnost da predloženu poslovnu inicijativu učinite uspješnom.
+„Na ideju o pokretanju vlastitog posla došao sam kroz višegodišnju edukaciju i profesionalno iskustvo u Njemačkoj, kao i kroz rad za međunarodnog poslodavca u Hrvatskoj. Imao sam priliku sudjelovati u projektima vezanima uz digitalne tehnologije, razvoj web-aplikacija te analizu, obradu i vizualizaciju korisničkih podataka.
+Tijekom studija u Njemačkoj stekao sam dragocjene vještine u području informatičkih znanosti i programiranja softverskih rješenja. Kroz rad na Institutu i Sveučilištu dodatno sam usavršio praktične vještine implementacije aplikacija i web-rješenja. Za inovativan pristup i rezultate dobio sam i priznanje Digital Humanities Award Sveučilišta u Kölnu.
+Radom u hrvatskoj podružnici međunarodne kompanije imao sam priliku ta znanja primijeniti i dodatno razviti. Pokrenuo sam i razvio anketni sustav za analizu fluktuacije zaposlenika kroz exit intervjue, ankete zadovoljstva i povratne informacije voditelja timova. Sve prikupljene podatke strukturirao sam, kategorizirao i standardizirao te s timom razvio njihovu vizualizaciju putem Power BI sustava. Uočio sam da se i jednostavni podaci, kada su logično strukturirani i jasno prikazani, mogu pretvoriti u iznimno vrijedan alat za donošenje operativnih odluka.
+Dodatno sam se usavršio kroz certifikat COPC LSS Yellow Belt, stječući kompetencije u analizi poslovnih procesa i prepoznavanju strukturnih slabosti poduzeća temeljenih na podatkovnim trendovima.
+Sve to iskustvo dovelo me do spoznaje koliko je digitalna transformacija ključna i za mala i srednja poduzeća; osobito poduzeća koja nemaju resurse za suradnju s velikim IT tvrtkama, ali žele modernizirati poslovanje. Upravo u tom segmentu prepoznajem priliku za pokretanje vlastitog obrta u Hrvatskoj, gdje je digitalizacija poduzetništva i dalje veliki izazov, ali i golemi potencijal.
+Moja odluka da se nakon studija i rada u inozemstvu vratim u Hrvatsku temelji se na želji da stečeno znanje i iskustvo prenesem u domaće gospodarstvo te doprinesem lokalnom razvoju. Smatram da time ne gradim samo vlastitu karijeru, nego i pomažem drugim poduzetnicima da postanu konkurentniji kroz primjenu digitalnih tehnologija.
+Smatram da imam znanje i sposobnosti potrebne za uspjeh ovog posla jer posjedujem:
+•⁠  formalno obrazovanje iz područja medijske informatike,
+•⁠  radno iskustvo u inozemstvu i Hrvatskoj u razvoju softverskih rješenja, obrade podataka i digitalne transformacije,
+•⁠  međunarodna priznanja i certifikate koji potvrđuju stručnost,
+•⁠  motivaciju i entuzijazam da vlastiti rad usmjerim na rast i digitalizaciju domaćih malih i srednjih poduzeća.
+Vjerujem da će ova poslovna inicijativa biti uspješna jer se temelji na stvarnim potrebama tržišta, stručnim kompetencijama i jasnoj motivaciji da znanje stečeno u inozemstvu, kao i u međunarodnom poduzeću, prenesem u hrvatski poduzetnički sustav te pružim podršku digitalizaciji malih i srednjih poduzeća.“
+
+
+Opišite detaljno vrstu proizvoda i/ili usluge koju planirate ponuditi tržištu te pojasnite na kojoj lokaciji namjeravate obavljati djelatnost. Ukoliko planirate obavljati više djelatnosti, navedite pojedinosti za svaku od njih.
+„Planiram ponuditi tržištu niz specijaliziranih digitalnih usluga koje su usmjerene na razvoj i implementaciju suvremenih informatičkih rješenja za mala i srednja poduzeća te pojedince koji žele unaprijediti svoje poslovanje kroz digitalizaciju.
+1.⁠ ⁠Razvoj aplikacija i softverskih rješenja
+Prvi projekt bit će razvoj internog sustava za prikupljanje i vizualizaciju povratnih informacija kupaca putem QR-koda u maloprodajnim trgovinama i ugostiteljskim objektima. Sustav omogućuje jednostavno prikupljanje podataka o zadovoljstvu kupaca, dok se rezultati prikazuju na nadzornoj ploči. Prihodi će se ostvarivati kroz model licencnih pretplata.
+2.⁠ ⁠Digitalna transformacija i savjetovanje
+Usluga uključuje analizu poslovnih procesa klijenata, izradu strategija digitalizacije te implementaciju rješenja (automatizacija zadataka, ERP integracije i dr.). Usluge se naplaćuju po projektu ili po satu, ovisno o potrebama klijenta.
+3.⁠ ⁠Web-trgovine
+Pružat će se usluga izrade i uspostave i dizajna web-trgovine s integriranim sustavima plaćanja i logistikom. Ova usluga također se naplaćuje po projektu ili po satu.
+4.⁠ ⁠Obrada podataka i vizualizacija
+Prikupljanje, obrada i vizualna prezentacija podataka za klijente kroz napredne alate i vizualizacije (dashboardi, interaktivni izvještaji), uz dodatne poslovne analize.
+5.⁠ ⁠Testiranje i razvoj rješenja umjetne inteligencije
+Razvoj, testiranje i implementacija aplikacija i agenta umjetne inteligencije prilagođenih potrebama malih i srednjih poduzeća s ciljem automatizacije i digitalizacije poslovnih procesa."
+Djelatnost će se obavljati na adresi: Ulica Đure Crnatka 24, 10000 Zagreb.
+Prostor je u obiteljskom vlasništvu te će se koristiti kao poslovni prostor s jasno definiranim radnim prostorom i opremom potrebnom za digitalne djelatnosti. Budući da je riječ o digitalnim uslugama, lokacija klijenata nije ograničena – usluge će se pružati u Zagrebu, širom Hrvatske, ali i međunarodnim partnerima putem online kanala.“
+
+
+Bavi li se netko u vašoj obitelji (ili se unazad 12 mjeseci bavio) istom/srodnom djelatnošću?
+„(  )Da; (X)Ne“
+Ukoliko je odgovor DA, molimo u nastavku navedite podatke o obiteljskom poslovnom subjektu.
+
+Naziv
+„“
+
+OIB
+„“
+
+Adresa
+„“
+
+Djelatnost
+„“
+
+Procjenjujete li da ćete u prvoj godini poslovanja imati potrebu za zapošljavanjem drugih radnika?
+„(  )Da; (  )Ne; (X)U ovom trenutku ne mogu procijeniti“
+
+Molimo da obrazložite odgovor.
+„U prvoj godini poslovanja ne mogu unaprijed procijeniti potrebu za zapošljavanjem drugih radnika. Poslove ću u početku obavljati sam kao vlasnik obrta, a odluka o eventualnom zapošljavanju ovisit će o razvoju poslovanja i rastu potražnje za uslugama. Ako se ukaže potreba, otvoren sam za suradnju s vanjskim stručnjacima po projektu.“
+
+
+
+3.3) Struktura ulaganja
+
+
+Obrazložite u što namjeravate uložiti varijabilni iznos sredstava HZZ-a neophodnih za obavljanje djelatnosti u prvoj godini poslovanja – to mogu biti osnovna sredstva i oprema (navesti koja).
+„Ulaganja varijabilnog iznosa HZZ-a u prvoj godini poslovanja išla bi u osnovnu IT opremu nužnu za razvoj i isporuku SaaS/BI rješenja te sigurnost podataka:
+- Eksterni HDD WD Elements 5 TB — sigurnosne kopije i arhiva projekata.
+- UPS APC BX1200MI-GR (1200 VA/650 W) — zaštita od nestanka struje i prenapona.
+- SSD 2 TB Samsung 990 PRO NVMe — brza obrada podataka i stabilan rad razvojnih alata.
+- Hladnjak CPU be quiet! Pure Rock 2 — stabilnost i dugotrajan rad radne stanice pod opterećenjem.
+- Monitor Xiaomi A22i 22" FHD 75 Hz — dodatni ekran za razvoj, BI vizualizacije i testiranje UX-a.
+- GPU MSI GeForce RTX 4080 Super 16 GB — akceleracija AI/ML algoritama i kompleksnih vizualizacija.
+- RAM Corsair 64 GB (2×32 GB) DDR5 — multitasking, virtualizacija i rad s većim datasetovima.
+- Multifunkcijski pisač HP Deskjet 4220e — ispis ugovora, ponuda i prateće dokumentacije.
+Ukupni planirani trošak opreme iz ponude iznosi 1.966,02 EUR bez PDV-a 
+(491,50 EUR PDV =  2.457,52 EUR s PDV-om).“
+
+
+Navedite u što namjeravate uložiti sredstva iz drugih izvora financiranja u prvoj i drugoj godini poslovanja – to mogu biti osnovna sredstva i oprema (navesti koja), materijal i sirovina potrebni za rad, vozilo, oprema za uređenje prostora, edukacije i sl. Navedene stavke navesti u tablice s obzirom na izvor financiranja.
+
+Tablica 1. - Ulaganja sredstvima iz drugih izvora financiranja
+„Vrsta ulaganja	Iznos	
+Doprinosi	3150,12	
+Knjigovodstvo	1200,00	
+Fiskalna blagajna	500,00	
+Ostalo (VPS, domena i sl.)	150,00	
+Ukupno	5000,12	
+(Dodaj novi red)“
+
+
+Potreban prostor i dozvole za rad
+
+Podaci o Vašem poslovnom prostoru:
+„(  )u vlasništvu; (  )u zakupu; (X)nije potreban“
+
+
+Navedite u kojem gradu/mjestu planirate registrirati sjedište budućeg poslovnog subjekta te na kojem području planirate obavljati djelatnost. Ukoliko vam je potreban poslovni prostor, navedite detalje o tome imate li osiguran prostor u svom vlasništvu, vlasništvu obitelji ili ga planirate zakupiti.
+„Sjedište budućeg obrta bit će registrirano na adresi Ulica Đure Crnatka 24, 10000 Zagreb, u obiteljskom stanu (stan roditelja). Djelatnost planiram obavljati na području Grada Zagreba i Zagrebačke županije, a zbog digitalne naravi usluga pružat ću ih i na daljinu klijentima u cijeloj Republici Hrvatskoj te, po potrebi, na tržištu Europske unije (osobito DACH).
+Za početak mi nije potreban dodatni poslovni prostor; posao ću obavljati iz kućnog ureda na adresi sjedišta. Prema potrebi koristit ću coworking prostore ili najam dvorana za sastanke i radionice. Aplikacije i servisi bit će smješteni na VPS web-hostingu, stoga fizički prostor nije preduvjet za isporuku usluga.“
+
+
+Jesu li za obavljanje Vaše djelatnosti potrebne određene dozvole, odobrenja, atesti ili zadovoljavanje minimalnih tehničkih uvjeta?
+„(  )Da; (X)Ne“
+
+Ako da, koje?
+„“
+
+Navedite koja odobrenja, ateste, licence i sl. još morate ishoditi ili nabaviti.
+„Operativne obveze izvan dozvola: 
+- usklađenje s GDPR-om (evidencija obrada; ugovor o obradi podataka s pružateljem VPS hostinga) 
+- bezgotovinsko fakturiranje (fiskalizacija samo ako uvedem gotovinsko/kartično plaćanje)
+- informacijske obveze ako se ugovori sklapaju online s potrošačima.“
+
+Navedite popis opreme i prijevoznih sredstava koje već posjedujete za obavljanje Vaše djelatnosti.
+„
+Postojeća oprema/prijevozna sredstva	
+Računalo ((AMD Ryzen 5 7600 6x 3.80GHz So.AM5 BOX, 32GB (2x 16GB) teamGroup T-Create Expert weiss DDR5-6000 DIMM CL30-36-36-76 Dual Kit, 1TB WD Blue SN580 M.2 2280 PCIe 4.0 x4 3D-NAND TLC (WDS100T3B0E), 750 Watt be quiet! Pure Power 12 M Modular 80+ Gold, MSI Tomahawk WIFI AMD B650 So.AM5 DDR5 ATX Retail, Fractal Design Pop Air RGB Midi Tower schwarz).	
+Laptop (MacBook Air (13-inch, Early 2015).	
+Monitor, miš, tastatura.	
+Radni prostor (stan, radna soba, stol, stolica).	
+Internetska i mobilna mreža (ugovor).	
+Poslovni mobitel.	
+(Dodaj novi red)“
+
+
+3.4.) Procjena tržišta i konkurencije 
+
+Tko su potencijalni korisnici ili klijenti Vaših proizvoda /usluga, te na koji dio tržišta se planirate orijentirati (odrediti lokalitet: grad, županija, država)?
+„Potencijalni korisnici mojih usluga prvenstveno su mala i srednja poduzeća koja nemaju vlastite IT odjele, ali imaju izraženu potrebu za digitalizacijom poslovanja, unapređenjem korisničkog iskustva i modernizacijom svojih procesa.
+Sustav za prikupljanje povratnih informacija kupaca posebno je pogodan za trgovine i ugostiteljske objekte. Usluge digitalne transformacije i savjetovanja namijenjene su tvrtkama koje žele unaprijediti poslovne procese i uvesti automatizaciju. Izrada web-trgovina i portala korisna je poduzetnicima i obrtnicima koji žele proširiti prodaju na internet. Posljednje, obrada podataka i vizualizacija pružaju vrijednost menadžmentu koji donosi poslovne odluke na temelju podataka. Primjena umjetne inteligencije namijenjena je poduzećima u razvoju koja žele optimizirati poslovanje i povećati učinkovitost. Planira se uz alate umjetne inteligencije razviti i aplikacije za daljnja tržišta.
+Geografski gledano, poslovanje će se u početnoj fazi usmjeriti na Grad Zagreb i Zagrebačku županiju, gdje se nalazi najveća koncentracija potencijalnih klijenata. Kako su usluge u potpunosti digitalne, one se lako mogu ponuditi i na području cijele Hrvatske, bez obzira na fizičku lokaciju korisnika. Dugoročni cilj je izlazak na međunarodno tržište, prvenstveno unutar Europske unije (najprije njemačko govorno područje), gdje postoji stalna potražnja za fleksibilnim i cjenovno pristupačnim digitalnim rješenjima.“
+
+Navedite na koji način ste procijenili da će Vaši proizvodi/usluge biti prepoznati na tržištu te da ćete imati dovoljno klijenata za uspješno poslovanje?
+„Procjenu da će moje usluge biti prepoznate na tržištu temeljim na analizi potreba malih i srednjih poduzeća, koja čine više od 95 % ukupnog gospodarstva u Hrvatskoj i koja se suočavaju s izraženim izazovima digitalne transformacije. Tijekom dosadašnjeg rada imao sam priliku izravno surađivati s poslovnim subjektima koji su prolazili kroz slične procese, što mi daje uvid u stvarne potrebe tržišta i potvrđuje da postoji prostor za ovakva rješenja i u Hrvatskoj.
+Rastuća potražnja za digitalnim alatima, analitikom podataka, web-trgovinama i primjenom umjetne inteligencije pokazuje da poduzetnici prepoznaju važnost digitalizacije, ali im često nedostaju prilagođena i cjenovno prihvatljiva rješenja. Moj pristup temelji se upravo na tome — pružiti kvalitetnu, fleksibilnu i povoljniju uslugu prilagođenu MSP-ovima koji nemaju resurse za suradnju s velikim IT tvrtkama.
+Uz dosadašnje znanje, iskustvo i kontakte na domaćem i međunarodnom tržištu, uvjeren sam da će moje usluge biti prepoznate, a baza klijenata dovoljna da osigura uspješno i održivo poslovanje već u prvim godinama rada.“
+
+
+Na koji način ćete obavještavati potencijalne kupce/klijente o ponudi svojih proizvoda/usluga? 
+Označite moguće odgovore.
+ „[X]posjetnice; 
+[X]usmena reklama i preporuke; 
+[ ]brošure i letci; 
+[ ]plaćeni oglasi u novinama i časopisima;
+[ ]natpisi na vozilima; 
+[ ]reklame na radiju i televiziji;
+[X]poslovni sajmovi;
+[ ]društvene mreže“
+
+Planirate li izradu poslovne web stranice?
+„(X)Da; (  )Ne zasad mi nije potrebna; (  )već je u izradi“
+
+Ukoliko je web stranica u izradi ili već postoji, navedite poveznicu (link) iste:
+„“
+
+Tržište nabave
+
+Imate li dogovorenu suradnju s dobavljačima i budućim poslovnim partnerima?
+„(X)Da; (  )Ne zasad“
+
+Ukoliko imate dogovorenu suradnju, možete li dostaviti pisane dokaze o istom (predugovore, pisma namjere drugih poslovnih subjekata i sl.)?
+„(X)Da; (  )Ne zasad“
+
+Znate li gdje ćete nabavljati potrebnu opremu, materijal, sirovinu i sl. potrebnu za obavljanje Vaše djelatnosti?
+„(X)Da; (  )Ne zasad“
+
+Možete li sve potrebno nabaviti u Republici Hrvatskoj ili biste neku robu/usluge radije nabavljali u inozemstvu?
+„(X)sve mogu nabaviti u RH; (  )neka inozemna roba/usluge bolje odgovaraju potrebama mog poslovanja (navedite razlog):“
+„Svu opremu planiram kupiti u RH; jedina iznimka je VPS web-hosting, koji ću ugovoriti s danskim Webdockom.“
+
+
+Konkurencija
+
+Tko je Vaša konkurencija? Molimo navedite podatke o Vašim glavnim konkurentima, njihovim prednostima i slabostima u odnosu na Vas.
+„Na zagrebačkom tržištu digitalnih usluga prisutni su individualni freelanceri, mali razvojni timovi, brojne etablirane manje agencije, kao Kontra digital, Borealis i Inchoo, veće domaće softverske tvrtke poput Infinuma i Q Agencyja, te međunarodne konzultantske kompanije poput Accenturea ili IBM-a.
+Prednosti freelancera i manjih timova jesu niže cijene, prednosti manjih i većih agencija jesu širok spektar usluga i iskusni timovi — one nude sve od marketinga, preko razvoja specijaliziranih rješenja, do primjene umjetne inteligencije. Prednosti konzultantskih kompanija pak su ponude cjelovitih digitalnih transformacija poduzeća.
+Međutim, freelanceri i manji timovi često nemaju isto znanje iz poslovne analitike, obrade podataka i vizualizacije; veće agencije češće rade veće projekte s višim budžetima, što ih čini manje dostupnima manjim poduzećima; a konzultantske kompanije su skupe i proceduralno zahtjevne te od koristi tek većim poduzećima. Upravo tu vidim svoju prednost.
+Za razliku od velikih agencija, moj obrt temelji se na individualnom pristupu i fleksibilnosti te isporučujem rješenja skrojena potrebama malih i srednjih poduzeća. Niži troškovi i agilnost omogućuju mi da specijalizirane usluge ponudim po pristupačnijim uvjetima, uz odgovarajuću kvalitetu.
+Uz to, fokusiran sam na izradu sustava za prikupljanje povratnih informacija putem QR koda te naprednu obradu i vizualizaciju podataka. Specijalizirane QR-kod ankete kupaca i napredna obrada tih podataka u segmentu MSP-ova u Hrvatskoj nisu široko primijenjeni, te mi omogućuju brzi ulazak na tržište. Gotovi SaaS alati poput SurveyMonkeyja i Microsoft Power BI-ja ne nude jednostavnu prilagodbu specifičnostima poslovanja, što predstavlja barijera za ulazak za manja poduzeća bez vlastite IT podrške i prostor za moju ideju i obrt.“
+
+Po čemu ćete biti drugačiji od svoje konkurencije? Navedite konkretne aktivnosti kojima ćete privući klijente (izbjegavati fraze “brži, bolji, jeftiniji“).
+„Posebno me izdvaja razvoj sustava za prikupljanje povratnih informacija putem QR koda te interaktivnih nadzornih ploča za vizualizaciju podataka — najprije za povratne informacije kupaca, potom i za druge poslovne procese. Takve usluge izravno pomažu optimizirati rad i povećati učinkovitost, cjenovno su pristupačne kroz pretplatnički model, te u segmentu MSP-ova u Hrvatskoj još nisu široko primijenjene u prilagođenom, i jednostavnom formatu.
+Od konkurencije se dodatno namjeravam izdvojiti ponudom specijaliziranih rješenja usmjerenih na potrebe malih i srednjih poduzeća. Moj pristup temelji se na razvoju konkretnih digitalnih alata prilagođenih pojedinom klijentu. Poseban naglasak stavljam na osobni pristup i izravnu komunikaciju. Svaki projekt započinje detaljnom analizom poslovnih potreba naručitelja, nakon čega predlažem jasno strukturirano rješenje koje adresira njihove specifične izazove. U sklopu procesa nerijetko razvijem prototip ili probnu verziju rješenja, kako bi klijent odmah vidio vrijednost i praktičnu korist.
+Za privlačenje klijenata planiram iskoristiti osobno umrežavanje i aktivnu prisutnost u zajednici: korištenje profesionalnih mreža te sudjelovanje na lokalnim strukovnim događanjima, radionicama i meetupovima, gdje mogu graditi odnose i pokazati stručnost. Također, nudim inicijalne konzultacije bez obveze i povoljnu provedbu manjih pilot-projekata ili proof-of-concept demonstracija. Time snižavam ulaznu barijeru za potencijalne klijente i odmah pokazujem prednosti rješenja. Nadalje, planiram suradnju s poduzetničkim centrima i poslovnim udrugama te sudjelovanje u IT klasterima i webinarima o digitalnoj transformaciji, pozicionirajući se kao stručan, a pristupačan partner za digitalizaciju.
+S takvim specijaliziranim, transparentnim i na klijenta usmjerenim pristupom nastojim se jasno istaknuti na tržištu. Nudim alate i podršku, skrojene prema potrebama MSP-ova, uz osobnu uključenost i jasnu dodanu vrijednost koja će privući i zadržati klijente.“
+
+
+Inovativnost projekta
+
+
+Uvodite li ovim projektom novi ili inovativni proizvod ili tehničko-tehnološki proces?
+„Ovim projektom uvodim inovativan proizvod i tehničko rješenje na tržište. Riječ je o integriranoj platformi za prikupljanje povratnih informacija i analitiku, koja objedinjuje više naprednih komponenti u jedno rješenje prilagođeno manjim poduzećima. Konkretno, platforma kombinira mikro-ankete za prikupljanje povratnih informacija kupaca i gostiju s automatskom obradom podataka za analizu tekstualnih odgovora. Rezultati se prikazuju u stvarnom vremenu — putem interaktivnih nadzornih ploča — što menadžmentu omogućuje kontinuirano praćenje i razumijevanje povratnih informacija.
+Takva kombinacija, prilagođena specifičnim potrebama manjih poduzeća i dostupna na lokalnom jeziku, u segmentu MSP-ova u Hrvatskoj nije široko primijenjena. S tehnološke strane, projekt koristi moderne razvojne okvire i tehnologije otvorenog koda, što omogućuje brzu implementaciju i jednostavnu primjenu rješenja u oblaku (na VPS-u).
+U idućim fazama planiram razviti dodatne module i integracije — različite vrste anketa za specifične potrebe poduzeća te AI-servise za obradu i procjenu podataka — čime će se proširiti funkcionalnost za klijente i otvoriti mogućnost širenja na druge grane poslovanja te na inozemna tržišta EU - a za razliku od većine lokalnih ponuđača, imam njemačko državljanstvo i tečno govorim njemački/engleski, što smanjuje jezične i administrativne barijere pri izlasku na njemačko i inozemna tržišta.
+Osim samog proizvoda, inovativnost projekta očituje se i u cjelovitosti usluge — spajam razvoj softvera sa savjetovanjem manjim poduzećima. Klijenti tako dobivaju ne samo alat, nego i podršku u analizi poslovnih procesa te uvođenju nove tehnologije.“
+
+
+
+3.5.) Procjena prihoda
+
+
+Tablica 2.1. - Procjena prihoda u prvoj godini poslovanja (*Molimo vas da u tablici nabrojite nekoliko Vaših osnovnih proizvoda ili usluga te njihovu okvirnu cijenu kako biste mogli izračunati očekivani prihod u prvoj godini poslovanja. Također je važna procjena količine prodanih proizvoda/usluga u jednom mjesecu (stupac 2) i možete ju odrediti na principu prosjeka: (najbolji mjesec + najlošiji mjesec) / 2.)
+„Naziv proizvoda/usluge	Cijena pojedinog proizvoda/usluge	Broj očekivanih prodaja u jednom mjesecu	Očekivani mjesečni prihod od prodaje (pomnožiti stupac 2 i 3)	Očekivani godišnji prihod od prodaje (pomnožiti stupac 4 s 12)	
+QR feedback software (osnovni paket)	50,00	12,00	600,00	7200,00	
+QR feedback software (napredni paket)	100,00	4,00	400,00	4800,00	
+Jednokratna instalacija (QR  software)	200,00	1,35	270,00	3240,00	
+Obrada i vizualizacija podataka	500,00	0,67	335,00	4020,00	
+Digitalna savjetovanja	500,00	0,50	250,00	3000,00	
+Projekt digitalizacije	1700,00	0,25	425,00	5100,00	
+Izrada web trgovine	1500,00	0,17	255,00	3060,00	
+Testiranja i uvođenje AI rješenja	1000,00	0,08	80,00	960,00	
+Ukupno	5550,00	19,02	2615,00	31380,00	
+Dodaj novi red"
+
+
+Tablica 2.2. - Procjena prihoda u drugoj godini poslovanja (*Molimo vas da u tablici nabrojite nekoliko Vaših osnovnih proizvoda ili usluga te njihovu okvirnu cijenu kako biste mogli izračunati očekivani prihod u drugoj godini poslovanja. Također je važna procjena količine prodanih proizvoda/usluga u jednom mjesecu (stupac 2) i možete ju odrediti na principu prosjeka: (najbolji mjesec + najlošiji mjesec) / 2.)
+„
+Naziv proizvoda/usluge	Cijena pojedinog proizvoda/usluge	Broj očekivanih prodaja u jednom mjesecu	Očekivani mjesečni prihod od prodaje (pomnožiti stupac 2 i 3)	Očekivani godišnji prihod od prodaje (pomnožiti stupac 4 s 12)	
+QR feedback software (osnovni paket)	60,00	20,00	1200,00	14400,00	
+QR feedback software (napredni paket)	120,00	6,00	720,00	8640,00	
+Jednokratna instalacija (QR  software)	220,00	0,85	187,00	2244,00	
+Obrada i vizualizacija podataka	550,00	0,68	374,00	4488,00	
+Digitalna savjetovanja	550,00	0,34	187,00	2244,00	
+Projekt digitalizacije	1800,00	0,25	450,00	5400,00	
+Izrada web trgovine	1600,00	0,08	128,00	1536,00	
+Testiranja i uvođenje AI rješenja	1100,00	0,17	187,00	2244,00	
+Ukupno	6000,00	28,37	3433,00	41196,00	
+Dodaj novi red“
+
+
+3.6.) Procjena troškova poslovanja
+
+
+Tablica 3.1. - Trošak rada u prvoj godini poslovanja (*Za trg. društvo navedite očekivanu mjesečnu bruto plaću (neto plaća + doprinosi) i pomnožite s 12 mjeseci. Za obrt ili samostalnu djelatnost, navedite iznos mjesečnih doprinosa i pomnožite s 12. Planirate li zapošljavanje drugih osoba u prvoj godini poslovanja, navedite u drugom stupcu očekivanu bruto plaću za tu osobu/osobe (neto plaća + doprinosi) i pomnožite s 12.)
+„Trošak rada u prvoj godini poslovanja	Mjesečni iznos	Godišnji iznos
+Bruto plaća ili doprinosi za obrtnike / RPO	262,51	3150,12
+Bruto plaća za zaposlenike	0,00	0,00
+Ukupni troškovi rada	262,51	3150,12
+“
+
+Tablica 3.2. - Trošak rada u drugoj godini poslovanja (*Za trg. društvo navedite očekivanu mjesečnu bruto plaću (neto plaća + doprinosi) i pomnožite s 12 mjeseci. Za obrt ili samostalnu djelatnost, navedite iznos mjesečnih doprinosa i pomnožite s 12. Planirate li zapošljavanje drugih osoba u drugoj godini poslovanja, navedite u drugom stupcu očekivanu bruto plaću za tu osobu/osobe (neto plaća + doprinosi) i pomnožite s 12.)
+„Trošak rada u drugoj godini poslovanja	Mjesečni iznos	Godišnji iznos
+Bruto plaća ili doprinosi za obrtnike / RPO	262,51	3150,12
+Bruto plaća za zaposlenike	0,00	0,00
+Ukupni troškovi rada	262,51	3150,12“
+
+
+Tablica 4.1. Ostali troškovi u prvoj godini poslovanja (*Molimo navedite ostale očekivane troškove u prvoj godini poslovanja (npr. najamnina, usluge knjigovodstva, potrošni materijal, režijski troškovi, ostala davanja i sl.).
+„Ostali troškovi u prvoj godini poslovanja	Iznos mjesečni	Iznos godišnji	
+Sirovine i materijal	150,00	1800,00	
+Režije	120,00	1440,00	
+Knjigovodstvo	100,00	1200,00	
+Ostali troškovi	80,00	960,00	
+Ukupno	450,00	5400,00	
+Dodaj novi red“
+
+
+Tablica 4.2. - Ostali troškovi u drugoj godini poslovanja (*Molimo navedite ostale očekivane troškove u drugoj godini poslovanja (npr. najamnina, usluge knjigovodstva, potrošni materijal, režijski troškovi, ostala davanja i sl.).
+„Ostali troškovi u drugoj godini poslovanja	Iznos mjesečni	Iznos godišnji	
+Sirovine i materijal	200,00	2400,00	
+Režije	150,00	1800,00	
+Knjigovodstvo	120,00	1440,00	
+Ostali troškovi	100,00	1200,00	
+Ukupno	570,00	6840,00	
+Dodaj novi red“
+
+
+3.7.) Očekivana dobit/dohodak
+
+Procjena dobiti/dohotka
+
+Da biste izračunali očekivanu dobit u prvoj godini poslovanja, molimo Vas da unesete podatke iz tablice 2.1. i 2.2. koja prikazuje očekivane godišnje prihode te tablica 3.1., 3.2. i 4.1., 4.2. koje prikazuju očekivane godišnje troškove. Neto dobit je Vaša zarada od prodaje proizvoda i usluga koja ostaje nakon što su odbijeni svi troškovi i nakon što je plaćen porez na dobit/dohodak.U svrhu izračuna koristi se okvirna porezna stopa od 20% i ne predstavlja nužno jednu od trenutno važećih zakonskih poreznih stopa. Redak  4. popunjavaju svi podnositelji zahtjeva bez obzira na planirani pravni oblik registracije (obrti, trgovačka društva, samostalne djelatnosti i sl.)
+„Prva godina poslovanja	Druga godina poslovanja
+Godišnji prihodi od prodaje (tablica 2.1. i 2.2.)	31380,00	41196,00
+Ukupni godišnji troškovi (tablica 3.1. i 3.2. + 4.1. i 4.2.)	8550,12	9990,12
+Očekivana dobit prije oporezivanja (redak 1. umanjiti za redak 2.)	22829,88	31205,88
+Porez na dobit (redak 3. pomnožiti s 0,20)	4565,98	6241,18
+Očekivana neto dobit (redak 3. umanjiti za redak 4.)	18263,90	24964,70“
+
+Moja očekivana neto dobit (zarada) u prvoj godini poslovanja iznosi
+„18263,90“€
+
+Moja očekivana neto dobit (zarada) u drugoj godini poslovanja iznosi
+„24964,70“€
+
+
+4.) Troškovnik
+
+Troškovnik
+
+Iznos potpore za samozapošljavanje određuje se prema djelatnosti koju podnositelji zahtjeva namjeravaju registrirati, a sukladno propisanim kriterijima mjere, pri čemu sve djelatnosti nisu prihvatljive za financiranje.
+U navedenoj tablici navedite fiksni dio potpore u iznosu 5.000 €. Ukoliko je traženi iznos potpore veći od fiksnog iznosa, ostatak tablice popunite troškovima koji su vam potrebni za početak poslovanja, a prema popisu prihvatljivih troškova za 2025. godinu. Zbroj troškova u troškovniku ne smije biti manji od iznosa tražene potpore te se u njemu ne smiju nalaziti troškovi koje će podnositelji zahtjeva sami financirati. Svi troškovi navode se bez PDV-a. Potpora ne mora biti dodijeljena u traženom iznosu.
+„Vrsta troška	Iznos bez PDV-a
+Fiksni iznos potpore	5000,00
+Kupnja nove opreme neophodne za obavljanje djelatnosti - alati/strojevi/tehnika	0,00
+Kupnja nove opreme neophodne za obavljanje djelatnosti - informatička oprema	1996,02
+Kupnja nove opreme neophodne za obavljanje djelatnosti - ostala oprema	0,00
+K­upnja ili zakup licenciranih IT programa	0,00
+­Kupnja franšiza	0,00
+Ukupno	6996,02“
+
+
+5.) Prilozi
+
+
+5.1) Potvrda o blokadi računa i novčanih sredstava ovršenika na osobno ime podnositelja zahtjeva, ne starija od 7 dana (potvrdu izdaje FINA na zahtjev osobe i bez naplate)
+"Naziv	Obavezan	Datoteka
+Potvrda o blokadi računa i novčanih sredstava ovršenika na osobno ime podnositelja zahtjeva, ne starija od 7 dana (potvrdu izdaje FINA na zahtjev osobe i bez naplate)	da	
+11_Potvda o blokadi računa i novčanih sredstava.pdf"
+
+
+5.2.) Izjava o nepodmirenim obvezama
+"Naziv	Obavezan	Ispunjen
+Izjava o nepodmirenim obvezama	da	da"
+
+IZJAVA (5.2!)
+korisnika/ce potpore za samozapošljavanje
+O NEPODMIRENIM OBVEZAMA
+
+Ja,
+
+(ime i prezime)
+„Bruno Sebastian Penzar“
+
+(OIB)
+„00357376233“
+
+potvrđujem pod materijalnom i kaznenom odgovornošću da:
+„(  )imam; (X)nemam“
+
+nepodmirenih obveza na ime obavljanja gospodarske djelatnosti u Republici Hrvatskoj ili u inozemstvu.
+
+„[X]“ Potvrđujem da u posljednja 24 mjeseca nisam bio u statusu nositelja samoopskrbnog poljoprivrednog gospodarstva ili obiteljskog poljoprivrednog gospodarstva odnosno član obiteljskog poljoprivrednog gospodarstva, član zadruge, vlasnik obrta, vlasnik/osnivač trgovačkog društva, osnivač/vlasnik/nositelj/direktor/ravnatelj ili druga odgovorna osoba u obavljanju druge samostalne profesionalne djelatnosti, domaće radinosti ili sporednog zanimanja prema posebnom propisu.
+
+Također, izjavljujem da sam bio/la vlasnik/ca ili suvlasnik/ca poslovnog subjekta prije više od 24 mjeseca:
+
+(naziv poslovnog subjekta)
+„“
+
+registriranog u:
+„(  )Republici Hrvatskoj; (  )u inozemstvu (navesti naziv države)“
+
+Poslovni subjekt je prestao s radom ili prestao/la sam biti vlasnik/ca suvlasnik/ca poslovnog subjekta dana:
+„“
+
+te da je isti:
+„(  )brisan iz odgovarajućih registara; (  )ustupljen/prodan drugom/im vlasniku/cima“
+
+„[X]“ Prihvaćam da su dani podaci točni.
+(KRAJ IZJAVE 5.2)
+
+
+5.3.) Ponude/predračuni po stavkama troškovnika
+
+Navedeni prilog nije dio obvezne dokumentacije, no prilaganjem ponuda/predračuna ostvaruju se dodatni bodovi.
+„Naziv	Obavezan	Datoteka
+Ponude/predračuni po stavkama troškovnika	ne	
+Ponuda_HGSPOT_Grupa_d.o.o.pdf„
+(PONUDA NA KORISNICKO IME I OIB U IZNOSU VARIABILNIH SREDSTAVA (RACUNA SE BEZ PDV)
+Priznaju se isključivo troškovi koji su navedeni kao prihvatljivi Uvjetima i načinima korištenja sredstava za provođenje mjera u 2025. godini, bez obzira na sadržaj ponude
+
+
+
+5.4.) Ostali prilozi (dokazi o formalnom/neformalnom radnom iskustvu, obrazovanju, pismo namjere,...)
+
+Ukoliko posjedujete dodatnu dokumentaciju relevantnu za ocjenu poslovnog plana istu možete priložiti ovdje.
+„Naziv	Obavezan	Datoteka
+Ostali prilozi (dokazi o formalnom/neformalnom radnom iskustvu, obrazovanju, pismo namjere,...)	ne	
+08-COPC_LSS_Yellow_Belt_Certification.pdf
+03.2-Prekid_ugovora_o_radu-GESIS-Penzar.pdf
+06-Pismo_preporuke-Teleperformance.pdf
+04-Potvrda_o_radu-Sveučilište_u_Koelnu-ovjereni_pijevod.pdf
+02-Diploma-ovjereni_pijevod.pdf
+07-Nagrada_Digital_Humanities-ovjereni_pijevod.pdf
+05-Potvrda_o_radu-Teleperformance-ovjereni_pijevod.pdf
+01-Svjedodzba_o_Maturi-ovjereni_pijevod.pdf
+03.1-Ugovor_o_radu-GESIS-Penzar.pdf
+12_Potvrda o stanju duga.pdf
+02.2_Potvrda_Akademskog_stupca-ovjereni_pijevod.pdf
+Femi - Pismo namjere-potpisano.pdf
+Bruno-Penzar-Potvrda_o_Boravaku_2.pdf
+Bruno-Penzar-Potvrda_o_Boravaku_1.pdf
+Bruno-Penzar_Pasos.pdf
+Bruno-Penzar-Osobna.pdf
+Bruno-Penzar-Preslika_kartice_tekućeg_računa.pdf“

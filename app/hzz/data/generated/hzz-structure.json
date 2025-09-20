@@ -1,0 +1,145 @@
+{
+  "sections": [
+    {
+      "id": "1",
+      "key": "1",
+      "title": "Podaci o podnositelju zahtjeva",
+      "fields": [
+        { "key": "podrucni_ured", "label": "Odaberite nadležni područni ured...", "type": "text", "required": true },
+        { "key": "ime", "label": "Ime", "type": "text", "required": true },
+        { "key": "prezime", "label": "Prezime", "type": "text", "required": true },
+        { "key": "oib", "label": "OIB", "type": "text", "required": true },
+        { "key": "zanimanje", "label": "Zanimanje", "type": "text", "required": false },
+        { "key": "datum_rodjenja", "label": "Datum rođenja", "type": "text", "required": false },
+        { "key": "adresa", "label": "Adresa prebivališta (ulica i broj)", "type": "text", "required": false },
+        { "key": "grad", "label": "Grad/mjesto prebivališta", "type": "text", "required": false },
+        { "key": "kontakt_tel", "label": "Kontakt (telefon/mobitel)", "type": "text", "required": false },
+        { "key": "kontakt_email", "label": "Kontakt (e-mail)", "type": "text", "required": false },
+        { "key": "osnovna_skola", "label": "Osnovna škola (mjesto i godina završetka)", "type": "textarea", "required": false },
+        { "key": "srednja_skola", "label": "Srednja škola (naziv škole i godina završetka)", "type": "textarea", "required": false },
+        { "key": "fakultet", "label": "Fakultet/Magisterij/Doktorat", "type": "textarea", "required": false },
+        { "key": "usavrsavanje", "label": "Osposobljavanje i usavršavanje", "type": "textarea", "required": false },
+        { "key": "edukacije_za_vodenje", "label": "Završene edukacije za vođenje poslovanja", "type": "textarea", "required": false },
+        { "key": "hobiji", "label": "Hobiji i drugi interesi", "type": "textarea", "required": false },
+        { "key": "radionica", "label": "Radionica za samozapošljavanje (datum i mjesto)", "type": "text", "required": false },
+        { "key": "preth_poduzet_iskustvo", "label": "Prethodno poduzetničko iskustvo (naziv/OIB/djelatnost/status/aktivno od-do/podmirene obveze/koristio HZZ/razlog)", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "id": "2",
+      "key": "2",
+      "title": "Opći podaci o budućem poslovnom subjektu",
+      "fields": [
+        { "key": "vrsta_subjekta", "label": "Vrsta poslovnog subjekta", "type": "text", "required": true },
+        { "key": "struktura_vlasnistva", "label": "Struktura vlasništva (i udjeli)", "type": "textarea", "required": false },
+        { "key": "sjediste", "label": "Sjedište budućeg poslovnog subjekta (mjesto/grad)", "type": "text", "required": true },
+        { "key": "nkd", "label": "Unos djelatnosti prema NKD", "type": "textarea", "required": true },
+        { "key": "iznos_trazene_potpore", "label": "Iznos tražene potpore (EUR)", "type": "text", "required": true },
+        { "key": "neprihvatljive_djelatnosti", "label": "Neprihvatljive djelatnosti (info)", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "id": "3.1",
+      "key": "3.1",
+      "title": "Podaci o budućem poduzetniku i poslovnom subjektu",
+      "fields": [
+        { "key": "iskustvo_ugovor_o_radu", "label": "Navedite iskustvo (ugovor o radu)", "type": "textarea", "required": false },
+        { "key": "iskustvo_ostalih_vrsta", "label": "Navedite iskustvo (ugovor o djelu/studentski/volontiranje...)", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "id": "3.2",
+      "key": "3.2",
+      "title": "Predmet poslovanja",
+      "fields": [
+        { "key": "pravni_oblik_i_djelatnost", "label": "Vrsta subjekta i djelatnost", "type": "text", "required": true },
+        { "key": "motivacija_i_kompetencije", "label": "Kako je nastala ideja + kompetencije", "type": "textarea", "required": false },
+        { "key": "opis_proizvoda_usluga", "label": "Detaljan opis proizvoda/usluga i lokacija obavljanja", "type": "textarea", "required": false },
+        { "key": "obitelj_srodna_djelatnost", "label": "Bavi li se obitelj srodnom djelatnošću? + podaci", "type": "textarea", "required": false },
+        { "key": "zaposljavanje_procjena", "label": "Procjena potrebe za zapošljavanjem + obrazloženje", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "id": "3.3",
+      "key": "3.3",
+      "title": "Struktura ulaganja",
+      "fields": [
+        { "key": "ulaganja_varijabilni_hzz", "label": "U što ulažete varijabilni iznos HZZ-a (oprema...)", "type": "textarea", "required": true },
+        { "key": "ulaganja_iz_drugih_izvora", "label": "Tablica ulaganja iz drugih izvora", "type": "textarea", "required": false },
+        { "key": "prostor_i_dozvole", "label": "Prostor i dozvole (podaci, trebate li prostor, dozvole...)", "type": "textarea", "required": false },
+        { "key": "postojeca_oprema", "label": "Popis postojeće opreme/prijevoznih sredstava", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "id": "3.4",
+      "key": "3.4",
+      "title": "Procjena tržišta i konkurencije",
+      "fields": [
+        { "key": "potencijalni_klijenti_geografija", "label": "Tko su klijenti i gdje poslujete", "type": "textarea", "required": false },
+        { "key": "kako_znate_da_ce_biti_potražnja", "label": "Način procjene potražnje", "type": "textarea", "required": false },
+        { "key": "kanali_promocije", "label": "Kanali obavještavanja/marketinga (checkbox logika u tekstu)", "type": "textarea", "required": false },
+        { "key": "web_stranica", "label": "Plan web stranice i link", "type": "textarea", "required": false },
+        { "key": "trziste_nabave_partneri", "label": "Dobavljači/partneri + dokazi", "type": "textarea", "required": false },
+        { "key": "konkurencija", "label": "Tko je konkurencija + analitika", "type": "textarea", "required": false },
+        { "key": "diferencijacija", "label": "Po čemu ste drugačiji + aktivnosti", "type": "textarea", "required": false },
+        { "key": "inovativnost", "label": "Inovativnost proizvoda/procesa", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "id": "3.5",
+      "key": "3.5",
+      "title": "Procjena prihoda",
+      "fields": [
+        { "key": "tablica_prihodi_god1", "label": "Tablica 2.1 – prihodi (1. godina)", "type": "textarea", "required": true },
+        { "key": "tablica_prihodi_god2", "label": "Tablica 2.2 – prihodi (2. godina)", "type": "textarea", "required": true }
+      ]
+    },
+    {
+      "id": "3.6",
+      "key": "3.6",
+      "title": "Troškovi poslovanja",
+      "fields": [
+        { "key": "trosak_rada_god1", "label": "Tablica 3.1 – trošak rada (1. godina)", "type": "textarea", "required": true },
+        { "key": "trosak_rada_god2", "label": "Tablica 3.2 – trošak rada (2. godina)", "type": "textarea", "required": true },
+        { "key": "ostali_troskovi_god1", "label": "Tablica 4.1 – ostali troškovi (1. godina)", "type": "textarea", "required": true },
+        { "key": "ostali_troskovi_god2", "label": "Tablica 4.2 – ostali troškovi (2. godina)", "type": "textarea", "required": true }
+      ]
+    },
+    {
+      "id": "3.7",
+      "key": "3.7",
+      "title": "Očekivana dobit/dohodak",
+      "fields": [
+        { "key": "godisnji_prihodi", "label": "Godišnji prihodi (preuzeto iz 2.1/2.2)", "type": "text", "required": true },
+        { "key": "godisnji_troskovi", "label": "Godišnji troškovi (3.1/3.2 + 4.1/4.2)", "type": "text", "required": true },
+        { "key": "dobit_prije_poreza", "label": "Dobit prije oporezivanja", "type": "text", "required": true },
+        { "key": "porez", "label": "Porez (20%)", "type": "text", "required": true },
+        { "key": "neto_dobit", "label": "Očekivana neto dobit", "type": "text", "required": true }
+      ]
+    },
+    {
+      "id": "4",
+      "key": "4",
+      "title": "Troškovnik",
+      "fields": [
+        { "key": "fiksni_iznos", "label": "Fiksni iznos potpore (5000,00 EUR)", "type": "text", "required": true },
+        { "key": "it_oprema", "label": "Kupnja informatičke opreme (bez PDV-a)", "type": "text", "required": false },
+        { "key": "ostala_oprema", "label": "Ostala oprema", "type": "text", "required": false },
+        { "key": "licence", "label": "Kupnja/licence IT programa", "type": "text", "required": false },
+        { "key": "fransize", "label": "Kupnja franšiza", "type": "text", "required": false },
+        { "key": "troskovnik_ukupno", "label": "Ukupno", "type": "text", "required": true }
+      ]
+    },
+    {
+      "id": "5",
+      "key": "5",
+      "title": "Prilozi",
+      "fields": [
+        { "key": "potvrda_fina", "label": "Potvrda o blokadi računa (FINA)", "type": "text", "required": true },
+        { "key": "izjava_nepodmirene", "label": "Izjava o nepodmirenim obvezama", "type": "text", "required": true },
+        { "key": "ponude_predracuni", "label": "Ponude/predračuni (opcionalno)", "type": "text", "required": false },
+        { "key": "ostali_prilozi", "label": "Ostali prilozi (dokazi, pisma namjere…)", "type": "textarea", "required": false }
+      ]
+    }
+  ]
+}

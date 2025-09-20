@@ -1,0 +1,88 @@
+{
+  "1": {
+    "podrucni_ured": "Odaberite nadležni područni ured (prema mjestu otvaranja):",
+    "ime": "Ime",
+    "prezime": "Prezime",
+    "oib": "OIB",
+    "zanimanje": "Zanimanje",
+    "datum_rodjenja": "Datum rođenja",
+    "adresa": "Adresa prebivališta (ulica i broj)",
+    "grad": "Grad/mjesto prebivališta",
+    "kontakt_tel": "Kontakt (telefon/mobitel)",
+    "kontakt_email": "Kontakt (e-mail)",
+    "osnovna_skola": "Osnovna škola (mjesto i godina završetka)",
+    "srednja_skola": "Srednja škola (naziv škole i godina završetka)",
+    "fakultet": "Fakultet, magisterij, doktorat (naziv ustanove i godina diplome)",
+    "usavrsavanje": "Osposobljavanje i usavršavanje (koje ste završili)",
+    "edukacije_za_vodenje": "Završene edukacije za vođenje poslovanja (računovodstvo, marketing…)",
+    "hobiji": "Hobiji i drugi interesi",
+    "radionica": "Radionica za samozapošljavanje (datum i mjesto)",
+    "preth_poduzet_iskustvo": "Prethodno poduzetničko iskustvo (naziv, OIB, djelatnost, status, razdoblje, obveze, HZZ sredstva, razlog prestanka)"
+  },
+  "2": {
+    "vrsta_subjekta": "Vrsta poslovnog subjekta (d.o.o./j.d.o.o., obrt paušalni, obrt knjige, samostalna djelatnost, ostalo)",
+    "struktura_vlasnistva": "Struktura vlasništva (jedan vlasnik/suvlasništvo i udjeli)",
+    "sjediste": "Sjedište budućeg poslovnog subjekta (adresa, mjesto/grad)",
+    "nkd": "Djelatnosti prema NKD (popis šifri i naziva)",
+    "iznos_trazene_potpore": "Iznos tražene potpore (EUR)",
+    "neprihvatljive_djelatnosti": "Neprihvatljive djelatnosti (informativno)"
+  },
+  "3.1": {
+    "iskustvo_ugovor_o_radu": "Kronološko radno iskustvo (ugovor o radu) – razdoblje, poslodavac, opis poslova",
+    "iskustvo_ostalih_vrsta": "Kronološko radno iskustvo (ugovor o djelu/studentski/volontiranje…) – razdoblje, poslodavac, opis poslova"
+  },
+  "3.2": {
+    "pravni_oblik_i_djelatnost": "Vrsta subjekta koji registrirate i za koju djelatnost",
+    "motivacija_i_kompetencije": "Kako je nastala ideja + veza s iskustvom + znanje i sposobnosti",
+    "opis_proizvoda_usluga": "Detaljan opis proizvoda/usluga i lokacija obavljanja (za svaku djelatnost)",
+    "obitelj_srodna_djelatnost": "Bavi li se netko u obitelji srodnom djelatnošću? Ako da – podaci.",
+    "zaposljavanje_procjena": "Procjenjujete li potrebu za zapošljavanjem u prvoj godini? Obrazložite."
+  },
+  "3.3": {
+    "ulaganja_varijabilni_hzz": "Obrazložite u što ulažete varijabilni iznos HZZ-a (osnovna sredstva/oprema)",
+    "ulaganja_iz_drugih_izvora": "Ulaganja iz drugih izvora (tablica: vrsta ulaganja + iznos)",
+    "prostor_i_dozvole": "Potreban prostor i dozvole (status prostora, grad/mjesto, područje djelovanja, potrebne dozvole)",
+    "postojeca_oprema": "Popis postojeće opreme i prijevoznih sredstava"
+  },
+  "3.4": {
+    "potencijalni_klijenti_geografija": "Potencijalni korisnici/klijenti i dio tržišta (lokalitet)",
+    "kako_znate_da_ce_biti_potražnja": "Način procjene da će usluge biti prepoznate i da će biti dovoljno klijenata",
+    "kanali_promocije": "Na koji način ćete obavještavati kupce/klijente (označite/objasnite kanale)",
+    "web_stranica": "Plan izrade poslovne web stranice (i poveznica ako postoji)",
+    "trziste_nabave_partneri": "Tržište nabave: dobavljači/partneri i dokazi (predugovori/pisma namjere)",
+    "konkurencija": "Tko je konkurencija (prednosti/slabosti u odnosu na vas)",
+    "diferencijacija": "Po čemu ste drugačiji + konkretne aktivnosti privlačenja klijenata",
+    "inovativnost": "Uvodite li novi/inovativni proizvod ili tehničko-tehnološki proces? Obrazložite."
+  },
+  "3.5": {
+    "tablica_prihodi_god1": "Procjena prihoda – Tablica 2.1 (1. godina): naziv proizvoda/usluge, cijena, mjesečni broj, mjesečni prihod, godišnji prihod",
+    "tablica_prihodi_god2": "Procjena prihoda – Tablica 2.2 (2. godina): naziv proizvoda/usluge, cijena, mjesečni broj, mjesečni prihod, godišnji prihod"
+  },
+  "3.6": {
+    "trosak_rada_god1": "Trošak rada – Tablica 3.1 (1. godina): doprinosi/bruto plaće, ukupno",
+    "trosak_rada_god2": "Trošak rada – Tablica 3.2 (2. godina): doprinosi/bruto plaće, ukupno",
+    "ostali_troskovi_god1": "Ostali troškovi – Tablica 4.1 (1. godina): sirovine/materijal, režije, knjigovodstvo, ostalo, ukupno",
+    "ostali_troskovi_god2": "Ostali troškovi – Tablica 4.2 (2. godina): sirovine/materijal, režije, knjigovodstvo, ostalo, ukupno"
+  },
+  "3.7": {
+    "godisnji_prihodi": "Godišnji prihodi od prodaje",
+    "godisnji_troskovi": "Ukupni godišnji troškovi",
+    "dobit_prije_poreza": "Očekivana dobit prije oporezivanja",
+    "porez": "Porez na dobit (20%)",
+    "neto_dobit": "Očekivana neto dobit"
+  },
+  "4": {
+    "fiksni_iznos": "Fiksni iznos potpore",
+    "it_oprema": "Kupnja informatičke opreme (bez PDV-a)",
+    "ostala_oprema": "Kupnja ostale opreme",
+    "licence": "Kupnja/zakup licenciranih IT programa",
+    "fransize": "Kupnja franšiza",
+    "troskovnik_ukupno": "Ukupno"
+  },
+  "5": {
+    "potvrda_fina": "Potvrda FINA o blokadi (obvezno, <7 dana)",
+    "izjava_nepodmirene": "Izjava o nepodmirenim obvezama (obvezno)",
+    "ponude_predracuni": "Ponude/predračuni po stavkama troškovnika (neobvezno, donosi bodove)",
+    "ostali_prilozi": "Ostali prilozi (dokazi o iskustvu/obrazovanju, pisma namjere, dokumenti)"
+  }
+}
