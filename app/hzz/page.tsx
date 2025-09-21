@@ -53,7 +53,14 @@ export default function HzzPage() {
   // Globalni state za lijevu i desnu stranu po sekciji
   const initialAll = useMemo(() => {
     const obj: Record<SectionId, SectionData> = {};
-    UI_SECTIONS.forEach((s) => (obj[s.id] = { left: blankFor(s.id), right: blankFor(s.id), rightHints: {} }));
+    UI_SECTIONS.forEach(
+      (s) =>
+        (obj[s.id] = {
+          left: blankFor(s.id),
+          right: blankFor(s.id),
+          rightHints: {},
+        })
+    );
     return obj;
   }, []);
   const [data, setData] = useState<Record<SectionId, SectionData>>(initialAll);
@@ -70,7 +77,11 @@ export default function HzzPage() {
   );
 
   // state helpers
-  function setRight(sectionId: SectionId, values: FormState, hints?: Record<string, string>) {
+  function setRight(
+    sectionId: SectionId,
+    values: FormState,
+    hints?: Record<string, string>
+  ) {
     setData((prev) => ({
       ...prev,
       [sectionId]: {
@@ -99,23 +110,76 @@ export default function HzzPage() {
     setCvB64(b64);
   }
 
-  // STUB: za sada puni desnu stranu iz postojećih primjera; u Koraku 2 ovdje ide poziv n8n/LLM-a
+  // STUB: za sada puni desnu stranu iz postojećih primjera
   async function generateFromBrief() {
     setIsGenerating(true);
     try {
-      // reset desnih vrijednosti
       UI_SECTIONS.forEach((s) => setRight(s.id, blankFor(s.id), {} as any));
-      // popuni iz exampleFor
       for (const s of UI_SECTIONS) {
         const ex = exampleFor(s.id) || {};
         setRight(s.id, { ...ex });
       }
-      // fokus na prvu sekciju
       setActive(UI_SECTIONS[0]?.id ?? "1");
     } finally {
       setIsGenerating(false);
     }
   }
+
+
+
+
+async function debugWebhook() {
+  setIsGenerating(true);
+  try {
+    // 1) payload = spec + LOKALNI primjeri
+    const payload = {
+      brief,
+      cvB64,
+      sections: UI_SECTIONS.map((s) => ({
+        id: s.id,
+        title: s.title,
+        fields: s.fields.map((f: any) => ({ name: f.name })),
+      })),
+      examples: Object.fromEntries(
+        UI_SECTIONS.map((s: any) => [s.id, (exampleFor(s.id) || {})])
+      ),
+    };
+
+    // 2) call
+    const res = await fetch("/api/hzz-debug", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const json = await res.json();
+
+    // 3) prikaži cijeli odgovor u novom tabu
+    // const win = window.open("", "_blank");
+    //win!.document.write("<pre>" + JSON.stringify(json, null, 2) + "</pre>");
+    //win!.document.close();
+
+    // 4) izvuci examples iz raznih shape-ova i popuni desnu stranu
+    const exMap =
+      json?.n8n?.body?.examples ??
+      json?.n8n?.echo?.examples ??
+      json?.examples ?? null;
+
+    if (exMap) {
+      UI_SECTIONS.forEach((s) => setRight(s.id, blankFor(s.id), {} as any));
+      for (const s of UI_SECTIONS) {
+        const ex = exMap[s.id];
+        if (ex && typeof ex === "object") setRight(s.id, ex);
+      }
+      setActive(UI_SECTIONS[0]?.id ?? "1");
+    }
+  } finally {
+    setIsGenerating(false);
+  }
+}
+
+
+
+
 
   // derived (desni panel)
   const section = getSection(active);
@@ -128,17 +192,16 @@ export default function HzzPage() {
       <div className="grid grid-cols-2 gap-4 h-full p-3 min-h-0">
         {/* ===== Lijevo: Brief + CV ===== */}
         <div className="flex flex-col bg-white border rounded-md min-h-0">
-          {/* header (lijevo) */}
           <div className="sticky top-0 z-30 bg-white border-b">
             <div className="p-3">
               <h2 className="text-base font-semibold">Plan i ulazni podaci</h2>
               <div className="text-xs text-neutral-600">
-                Opiši obrt i ciljeve; možeš priložiti i životopis. Na temelju toga generirat ćemo kompletan primjer.
+                Opiši obrt i ciljeve; možeš priložiti i životopis. Na temelju
+                toga generirat ćemo kompletan primjer.
               </div>
             </div>
           </div>
 
-          {/* body (lijevo) */}
           <div className="flex-1 overflow-y-auto min-h-0 p-3 space-y-3">
             <label className="text-sm font-medium">Kratak opis plana (brief)</label>
             <textarea
@@ -149,7 +212,9 @@ export default function HzzPage() {
             />
 
             <div>
-              <label className="text-sm font-medium">Životopis (PDF/DOCX/TXT)</label>
+              <label className="text-sm font-medium">
+                Životopis (PDF/DOCX/TXT)
+              </label>
               <input
                 type="file"
                 accept=".pdf,.doc,.docx,.txt"
@@ -174,18 +239,19 @@ export default function HzzPage() {
         {/* ===== Desno: Stepper + forma ===== */}
         <div className="flex flex-col bg-white border rounded-md min-h-0">
           <div className="sticky top-0 z-30 bg-white border-b p-3">
-            {/* Stepper u desnom headeru */}
             <div className="p-2 -mt-2 -mb-1 overflow-x-auto">
               <div className="flex gap-2 whitespace-nowrap">
                 {groups.map((g) => {
-                  const groupOpen = active.split(".")[0] === g.id; // 3 je "otvoren" i za 3.x
+                  const groupOpen = active.split(".")[0] === g.id;
                   return (
                     <div key={g.id} className="inline-block">
                       <button
-                        onClick={() => setActive(g.children[0].id)} // klik na 3 otvara prvo 3.x
+                        onClick={() => setActive(g.children[0].id)}
                         className={[
                           "px-3 py-1 rounded-full text-sm border transition mr-2",
-                          groupOpen ? "bg-black text-white border-black" : "bg-white hover:bg-neutral-100 text-neutral-800",
+                          groupOpen
+                            ? "bg-black text-white border-black"
+                            : "bg-white hover:bg-neutral-100 text-neutral-800",
                         ].join(" ")}
                         title={`${g.id}) ${g.title}`}
                       >
@@ -202,11 +268,15 @@ export default function HzzPage() {
                                 onClick={() => setActive(child.id)}
                                 className={[
                                   "px-3 py-1 rounded-full text-sm border transition",
-                                  isActiveChild ? "bg-black text-white border-black" : "bg-white hover:bg-neutral-100 text-neutral-800",
+                                  isActiveChild
+                                    ? "bg-black text-white border-black"
+                                    : "bg-white hover:bg-neutral-100 text-neutral-800",
                                 ].join(" ")}
                                 title={`${child.id}) ${child.title}`}
                               >
-                                {isActiveChild ? `${child.id}) ${child.title}` : child.id}
+                                {isActiveChild
+                                  ? `${child.id}) ${child.title}`
+                                  : child.id}
                               </button>
                             );
                           })}
@@ -220,17 +290,21 @@ export default function HzzPage() {
 
             <div className="flex items-baseline gap-3 mt-2">
               <h2 className="text-lg font-semibold">Pitanja</h2>
-              <span className="text-sm text-neutral-600">({active}) {section.title}</span>
+              <span className="text-sm text-neutral-600">
+                ({active}) {section.title}
+              </span>
             </div>
             <div className="text-xs text-neutral-500 mt-1">
-              Desna strana je prazna dok ne generiraš primjer ili dok ne pošalješ podatke.
+              Desna strana je prazna dok ne generiraš primjer ili dok ne pošalješ
+              podatke.
             </div>
           </div>
 
           <div className="flex-1 overflow-y-auto min-h-0 p-3">
             {rightIsBlank ? (
               <div className="p-4 text-sm text-neutral-500">
-                Još nema podataka za ovu sekciju. Koristi <b>“Generiraj primjer”</b> s lijeve strane.
+                Još nema podataka za ovu sekciju. Koristi{" "}
+                <b>“Generiraj primjer”</b> s lijeve strane.
               </div>
             ) : (
               <SectionForm
@@ -243,13 +317,23 @@ export default function HzzPage() {
           </div>
 
           <div className="sticky bottom-0 z-30 bg-white border-t p-3 flex items-center gap-2 justify-end">
-            <button onClick={() => alert("Webhook n8n – spojit ćemo stvarni URL")} className="px-3 py-2 rounded border">
+            <button onClick={debugWebhook} className="px-3 py-2 rounded border">
               Webhook: n8n
             </button>
-            <button onClick={() => alert("PDF će koristiti DESNA (uređena) polja aktivne sekcije.")} className="px-3 py-2 rounded border">
+            <button
+              onClick={() =>
+                alert("PDF će koristiti DESNA (uređena) polja aktivne sekcije.")
+              }
+              className="px-3 py-2 rounded border"
+            >
               Preuzmi PDF
             </button>
-            <button onClick={() => alert("Word će koristiti DESNA (uređena) polja aktivne sekcije.")} className="px-3 py-2 rounded border">
+            <button
+              onClick={() =>
+                alert("Word će koristiti DESNA (uređena) polja aktivne sekcije.")
+              }
+              className="px-3 py-2 rounded border"
+            >
               Preuzmi Word
             </button>
           </div>
