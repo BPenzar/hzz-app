@@ -1,33 +1,50 @@
 // app/api/hzz/generate/route.ts
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
+
+export const runtime = 'nodejs';
+
+function err(status: number, code: string, message: string, details?: any) {
+  return NextResponse.json({ error: code, message, ...(details ? { details } : {}) }, { status });
+}
 
 export async function POST(req: Request) {
+  let payload: any;
   try {
-    const { brief, cvB64, sections, examples } = await req.json();
+    payload = await req.json();
+  } catch {
+    return err(400, 'bad_request', 'Invalid JSON payload');
+  }
 
-    const webhook = process.env.N8N_WEBHOOK_URL;
-    if (!webhook) {
-      return NextResponse.json({ error: "Missing N8N_WEBHOOK_URL" }, { status: 500 });
-    }
+  const url = process.env.N8N_WEBHOOK_URL;
+  if (!url) return err(500, 'server_error', 'N8N_WEBHOOK_URL missing');
 
-    const n8nRes = await fetch(webhook, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ brief, cvB64, sections, examples }),
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 60_000);
+
+    const r = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
     });
+    clearTimeout(timer);
 
-    if (!n8nRes.ok) {
-      const text = await n8nRes.text();
-      return NextResponse.json({ error: "n8n_error", details: text }, { status: 502 });
+    const text = await r.text();
+    if (!text) return err(502, 'server_error', 'n8n returned empty body', { status: r.status });
+
+    let data: any;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      return err(502, 'server_error', 'n8n returned non-JSON', { status: r.status, raw: text.slice(0, 500) });
     }
 
-    // očekujemo { sections: { [id]: { values: {...}, hints?: {...} } } }
-    const data = await n8nRes.json();
-    return NextResponse.json(data);
+    if (data?.error && r.ok) return err(502, 'llm_error', 'Upstream error from n8n', data);
+    if (!r.ok) return NextResponse.json(data ?? {}, { status: r.status });
+
+    return NextResponse.json(data ?? {});
   } catch (e: any) {
-    return NextResponse.json(
-      { error: "server_error", message: e?.message ?? String(e) },
-      { status: 500 }
-    );
+    return err(500, 'server_error', e?.message || String(e));
   }
 }
