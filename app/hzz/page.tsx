@@ -131,21 +131,34 @@ export default function HzzPage() {
 async function debugWebhook() {
   setIsGenerating(true);
   try {
-    // 1) payload = spec + LOKALNI primjeri
+    // 1) pripremi QUESTIONS iz UI_SECTIONS (light verzija da ne šaljemo suvišno)
+    const questions = UI_SECTIONS.map((s: any) => ({
+      id: String(s.id),
+      title: String(s.title || ""),
+      fields: (s.fields || []).map((f: any) => ({
+        name: String(f.name),
+        label: String(f.label || f.title || ""),
+        help: String(f.help || f.hint || f.placeholder || ""),
+        type: String(f.type || "text"),
+      })),
+    }));
+
+    // 2) payload = brief + cv + sections spec + LOCAL examples + questions
     const payload = {
       brief,
       cvB64,
-      sections: UI_SECTIONS.map((s) => ({
+      sections: UI_SECTIONS.map((s: any) => ({
         id: s.id,
         title: s.title,
-        fields: s.fields.map((f: any) => ({ name: f.name })),
+        fields: (s.fields || []).map((f: any) => ({ name: f.name })),
       })),
       examples: Object.fromEntries(
-        UI_SECTIONS.map((s: any) => [s.id, (exampleFor(s.id) || {})])
+        UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
       ),
+      questions, // << OVO JE NOVO
     };
 
-    // 2) call
+    // 3) call Next API → n8n
     const res = await fetch("/api/hzz-debug", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -153,24 +166,26 @@ async function debugWebhook() {
     });
     const json = await res.json();
 
-    // 3) prikaži cijeli odgovor u novom tabu
-    // const win = window.open("", "_blank");
-    //win!.document.write("<pre>" + JSON.stringify(json, null, 2) + "</pre>");
-    //win!.document.close();
+    // 4) prikaži cijeli odgovor u NOVOM PROZORU radi debug-a
+    const win = window.open("", "_blank");
+    win!.document.write("<pre>" + JSON.stringify(json, null, 2) + "</pre>");
+    win!.document.close();
 
-    // 4) izvuci examples iz raznih shape-ova i popuni desnu stranu
+    // 5) izvuci examples iz odgovora i popuni desnu stranu
     const exMap =
       json?.n8n?.body?.examples ??
       json?.n8n?.echo?.examples ??
       json?.examples ?? null;
 
     if (exMap) {
-      UI_SECTIONS.forEach((s) => setRight(s.id, blankFor(s.id), {} as any));
+      UI_SECTIONS.forEach((s: any) => setRight(s.id, blankFor(s.id), {} as any));
       for (const s of UI_SECTIONS) {
         const ex = exMap[s.id];
         if (ex && typeof ex === "object") setRight(s.id, ex);
       }
       setActive(UI_SECTIONS[0]?.id ?? "1");
+    } else {
+      console.warn("Webhook odgovor nema 'examples' mapu.");
     }
   } finally {
     setIsGenerating(false);
