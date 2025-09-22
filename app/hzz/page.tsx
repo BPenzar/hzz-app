@@ -128,56 +128,35 @@ export default function HzzPage() {
 
 
 
+// MINIMAL: šalje SAMO { examples } na /api/hzz-debug
 async function debugWebhook() {
   setIsGenerating(true);
   try {
-    // 1) pripremi QUESTIONS iz UI_SECTIONS (light verzija da ne šaljemo suvišno)
-    const questions = UI_SECTIONS.map((s: any) => ({
-      id: String(s.id),
-      title: String(s.title || ""),
-      fields: (s.fields || []).map((f: any) => ({
-        name: String(f.name),
-        label: String(f.label || f.title || ""),
-        help: String(f.help || f.hint || f.placeholder || ""),
-        type: String(f.type || "text"),
-      })),
-    }));
+    // 1) pripremi samo examples iz lokalnih definicija
+    const examples = Object.fromEntries(
+      UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
+    );
 
-    // 2) payload = brief + cv + sections spec + LOCAL examples + questions
-    const payload = {
-      brief,
-      cvB64,
-      sections: UI_SECTIONS.map((s: any) => ({
-        id: s.id,
-        title: s.title,
-        fields: (s.fields || []).map((f: any) => ({ name: f.name })),
-      })),
-      examples: Object.fromEntries(
-        UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
-      ),
-      questions, // << OVO JE NOVO
-    };
-
-    // 3) call Next API → n8n
+    // 2) pošalji minimalni payload
     const res = await fetch("/api/hzz-debug", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ examples }),
     });
     const json = await res.json();
 
-    // 4) prikaži cijeli odgovor u NOVOM PROZORU radi debug-a
+    // 3) pokaži raw odgovor (debug)
     const win = window.open("", "_blank");
     win!.document.write("<pre>" + JSON.stringify(json, null, 2) + "</pre>");
     win!.document.close();
 
-    // 5) izvuci examples iz odgovora i popuni desnu stranu
+    // 4) izvuci examples iz odgovora i popuniti desnu stranu
     const exMap =
       json?.n8n?.body?.examples ??
       json?.n8n?.echo?.examples ??
       json?.examples ?? null;
 
-    if (exMap) {
+    if (exMap && typeof exMap === "object") {
       UI_SECTIONS.forEach((s: any) => setRight(s.id, blankFor(s.id), {} as any));
       for (const s of UI_SECTIONS) {
         const ex = exMap[s.id];
