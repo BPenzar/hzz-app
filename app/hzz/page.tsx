@@ -128,6 +128,8 @@ export default function HzzPage() {
 
 
 
+
+
 // MINIMAL: šalje SAMO { examples } na /api/hzz-debug
 async function debugWebhook() {
   setIsGenerating(true);
@@ -170,6 +172,87 @@ async function debugWebhook() {
     setIsGenerating(false);
   }
 }
+
+
+
+
+
+
+
+// Escape malicioznih znakova pri izlazu u HTML
+function esc(s: string) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+
+
+function exportAllSectionsPdf() {
+  const all = UI_SECTIONS; // sve sekcije iz uvoza
+  const htmlParts = all.map((sec: any) => {
+    const values = data[sec.id]?.right || {};
+    const isBlank = Object.values(values).every((v) => !v);
+
+    // ako želiš preskočiti prazne sekcije, ostavi ovaj if
+    if (isBlank) return "";
+
+    const rows = sec.fields
+      .map((f: any) => {
+        const label = f.label || f.title || f.name;
+        const val = values?.[f.name] ?? "";
+        return `<tr>
+          <th>${esc(label)}</th>
+          <td>${esc(val).replace(/\n/g, "<br/>")}</td>
+        </tr>`;
+      })
+      .join("");
+
+    return `
+      <h2>${esc(sec.id)}) ${esc(sec.title)}</h2>
+      <table>${rows}</table>
+      <hr/>
+    `;
+  });
+
+  const html = `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>HZZ – svi odgovori</title>
+<style>
+  @page { size: A4; margin: 14mm; }
+  body { font: 12px system-ui, -apple-system, Segoe UI, Roboto, Arial; color: #111; }
+  h1 { font-size: 18px; margin: 0 0 10px 0; }
+  h2 { font-size: 15px; margin: 20px 0 6px 0; }
+  .meta { font-size: 11px; color: #555; margin: 0 0 12px 0; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+  th, td { border: 1px solid #ddd; padding: 6px 8px; vertical-align: top; }
+  th { width: 36%; background: #f7f7f7; text-align: left; }
+  hr { border: none; border-top: 1px solid #ccc; margin: 18px 0; }
+</style>
+</head>
+<body>
+  <h1>Svi odgovori – HZZ zahtjev</h1>
+  <div class="meta">Generirano: ${esc(new Date().toLocaleString())}</div>
+  ${htmlParts.join("\n")}
+  <script>
+    window.onload = () => { window.print(); setTimeout(() => window.close(), 250); };
+  </script>
+</body>
+</html>`;
+
+  const win = window.open("", "_blank");
+  if (!win) return alert("Popup blokiran. Dozvoli otvaranje novog prozora.");
+  win.document.write(html);
+  win.document.close();
+}
+
+
+
+
+
 
 
 
@@ -314,14 +397,9 @@ async function debugWebhook() {
             <button onClick={debugWebhook} className="px-3 py-2 rounded border">
               Webhook: n8n
             </button>
-            <button
-              onClick={() =>
-                alert("PDF će koristiti DESNA (uređena) polja aktivne sekcije.")
-              }
-              className="px-3 py-2 rounded border"
-            >
-              Preuzmi PDF
-            </button>
+	    <button onClick={exportAllSectionsPdf} className="px-3 py-2 rounded border">
+		Preuzmi PDF
+	    </button>
             <button
               onClick={() =>
                 alert("Word će koristiti DESNA (uređena) polja aktivne sekcije.")
