@@ -363,7 +363,7 @@ function exportAllSectionsPdf() {
           <Spinner className="text-white" />
 		    </span>
 		  ) : (
-		    "Generiraj novi primjer"
+		    "Generiraj primjer"
 		  )}
 		</button>
 
