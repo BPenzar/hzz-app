@@ -100,8 +100,8 @@ export default function HzzPage() {
   }, []);
   const [data, setData] = useState<Record<SectionId, SectionData>>(initialAll);
 
-  // Brief + CV upload (lijevi panel)
-  const [brief, setBrief] = useState<string>("");
+  // Idea + CV upload (lijevi panel)
+  const [idea, setIdea] = useState<string>("");
   const [cvB64, setCvB64] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -173,10 +173,10 @@ async function debugWebhook() {
       UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
     );
 
-    // pripremi payload: examples + brief (+ opcionalno CV)
+    // pripremi payload: examples + idea (+ opcionalno CV)
     const payload = {
       examples,
-      brief: brief?.trim() || null,     // ili "" ako želiš
+      idea: idea?.trim() || null,     // ili "" ako želiš
       // cvB64: cvB64 ?? undefined,   // uključi ako ga želiš slati
     };
 
@@ -303,7 +303,7 @@ function exportAllSectionsPdf() {
   return (
     <div className="h-screen overflow-hidden bg-neutral-50 text-neutral-900">
 	<div className="flex h-full p-3 min-h-0">
-	  {/* ===== Lijevo: Brief + CV ===== */}
+	  {/* ===== Lijevo: idea + CV ===== */}
 	  <div
 	    className="flex flex-col bg-white border rounded-md min-h-0 overflow-hidden"
 	    style={{ width: `${leftWidth}%`, marginRight: "0.5rem" }} // ~gap-2
@@ -328,12 +328,12 @@ function exportAllSectionsPdf() {
 	    </div>
 
 	    <div className="flex-1 overflow-y-auto min-h-0 p-3 space-y-3">
-	      <label className="text-sm font-medium">Kratak opis plana (brief)</label>
+	      <label className="text-sm font-medium">Kratak opis plana (idea)</label>
 		<textarea
 		  className="block w-full rounded-md border px-3 py-2 text-sm border-neutral-300 bg-white min-h-[120px] resize-y"
 		  placeholder="Vrsta obrta, usluge, ciljni klijenti, tržišta, kanali prodaje, ključni alati/tehnologije, lokacija, plan troškova/prihoda…"
-		  value={brief}
-		  onChange={(e) => setBrief(e.target.value)}
+		  value={idea}
+		  onChange={(e) => setIdea(e.target.value)}
 		/>
 	      
 	      {/*
@@ -354,13 +354,13 @@ function exportAllSectionsPdf() {
 		<button
 		  onClick={debugWebhook}
 		  className="px-4 py-2 rounded bg-black text-white disabled:opacity-60"
-		  disabled={isGenerating || (!brief && !cvB64)}
+		  disabled={isGenerating || (!idea && !cvB64)}
 		  aria-busy={isGenerating}
 		>
 		  {isGenerating ? (
 		    <span className="inline-flex items-center gap-2">
-		      <Spinner className="text-white" />
-		      Generira…
+		      Generiranje primjera 
+          <Spinner className="text-white" />
 		    </span>
 		  ) : (
 		    "Generiraj novi primjer"
