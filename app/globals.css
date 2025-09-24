@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
+/* Tailwind v4: .dark varijanta */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tema varijable – dark kao default */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2c3445;
+  --foreground: #ededed;
+
+  /* plavi akcent za night mode */
+  --color-accent-400: #60a5fa; /* sky-400 */
+  --color-accent-500: #3b82f6; /* blue-500 */
+  --color-accent-600: #2563eb; /* blue-600 */
+}
+.dark {
+  --background: #2c3445;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,13 +25,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Linkovi u dark modu dobiju plavi akcent */
+a { color: var(--color-accent-400); }
+a:hover { color: var(--color-accent-500); }
 
+/* Uniformni dark skin za form elemente (i lijevo i desno) */
+.dark input,
+.dark textarea,
+.dark select {
+  background: #262626;       /* neutral-800 */
+  color: #ffffff;
+  border: 1px solid #525252; /* neutral-600/700 */
+}
+.dark ::placeholder { color: #9ca3af; } /* neutral-400 */
+
+/* Body */
 body {
   background: var(--background);
   color: var(--foreground);
