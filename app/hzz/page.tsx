@@ -169,25 +169,25 @@ export default function HzzPage() {
 async function debugWebhook() {
   setIsGenerating(true);
   try {
-    // 1) pripremi samo examples iz lokalnih definicija
     const examples = Object.fromEntries(
       UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
     );
 
-    // 2) pošalji minimalni payload
+    // pripremi payload: examples + brief (+ opcionalno CV)
+    const payload = {
+      examples,
+      brief: brief?.trim() || null,     // ili "" ako želiš
+      // cvB64: cvB64 ?? undefined,   // uključi ako ga želiš slati
+    };
+
     const res = await fetch("/api/hzz-debug", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ examples }),
+      body: JSON.stringify(payload),
     });
+
     const json = await res.json();
 
-    // 3) pokaži raw odgovor (debug)
-    //const win = window.open("", "_blank");
-    //win!.document.write("<pre>" + JSON.stringify(json, null, 2) + "</pre>");
-    //win!.document.close();
-
-    // 4) izvuci examples iz odgovora i popuniti desnu stranu
     const exMap =
       json?.n8n?.body?.examples ??
       json?.n8n?.echo?.examples ??
@@ -207,6 +207,7 @@ async function debugWebhook() {
     setIsGenerating(false);
   }
 }
+
 
 
 
