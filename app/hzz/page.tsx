@@ -2,354 +2,494 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { UI_SECTIONS, exampleFor } from "./lib/data";
+import { SectionForm } from "./components/SectionForm";
 
-/** ===============================
- *  Sekcije (redoslijed i nazivi)
- *  =============================== */
-type SectionId =
-  | "1-podnositelj"
-  | "2-subjekt"
-  | "3-1-poduzetnik"
-  | "3-2-predmet"
-  | "3-3-ulaganja"
-  | "3-4-trziste"
-  | "3-5-prihodi"
-  | "3-6-troskovi"
-  | "3-7-dobit"
-  | "4-troskovnik"
-  | "5-prilozi";
-
-const SECTIONS: { id: SectionId; short: string; full: string }[] = [
-  { id: "1-podnositelj", short: "1) Podaci o podnositelju", full: "1) Podaci o podnositelju zahtjeva" },
-  { id: "2-subjekt", short: "2) Opći podaci o subjektu", full: "2) Opći podaci o budućem poslovnom subjektu" },
-  { id: "3-1-poduzetnik", short: "3.1) Poduzetnik", full: "3.1) Podaci o budućem poduzetniku i poslovnom subjektu" },
-  { id: "3-2-predmet", short: "3.2) Predmet", full: "3.2) Predmet poslovanja" },
-  { id: "3-3-ulaganja", short: "3.3) Ulaganja", full: "3.3) Struktura ulaganja" },
-  { id: "3-4-trziste", short: "3.4) Tržište i konkurencija", full: "3.4) Procjena tržišta i konkurencije" },
-  { id: "3-5-prihodi", short: "3.5) Prihodi", full: "3.5) Procjena prihoda" },
-  { id: "3-6-troskovi", short: "3.6) Troškovi", full: "3.6) Procjena troškova poslovanja" },
-  { id: "3-7-dobit", short: "3.7) Dobit/dohodak", full: "3.7) Očekivana dobit/dohodak" },
-  { id: "4-troskovnik", short: "4) Troškovnik", full: "4) Troškovnik" },
-  { id: "5-prilozi", short: "5) Prilozi", full: "5) Prilozi" },
-];
-
-/** ===============================
- *  Definicija polja (label -> name)
- *  =============================== */
-type Field = { name: string; label: string; long?: boolean; placeholder?: string };
-
-const FIELDS_BY_SECTION: Record<SectionId, Field[]> = {
-  "1-podnositelj": [
-    { name: "podrucniUred", label: "Područni ured" },
-    { name: "ime", label: "Ime", placeholder: "IME [PRIMJER]" },
-    { name: "prezime", label: "Prezime", placeholder: "PREZIME [PRIMJER]" },
-    { name: "oib", label: "OIB", placeholder: "00000000000" },
-    { name: "zanimanje", label: "Zanimanje" },
-    { name: "datumRodenja", label: "Datum rođenja" },
-    { name: "adresa", label: "Adresa" },
-    { name: "grad", label: "Grad/Mjesto" },
-    { name: "telefon", label: "Kontakt (telefon)" },
-    { name: "email", label: "Kontakt (e-mail)" },
-    { name: "osnovnaSkola", label: "Osnovna škola", long: true },
-    { name: "srednjaSkola", label: "Srednja škola", long: true },
-    { name: "fakultet", label: "Fakultet/Mag./Doktorat", long: true },
-    { name: "osposobljavanje", label: "Osposobljavanje i usavršavanje", long: true },
-    { name: "edukacije", label: "Edukacije za vođenje poslovanja", long: true },
-    { name: "hobiji", label: "Hobiji i interesi", long: true },
-    { name: "radionica", label: "Radionica za samozapošljavanje" },
-    { name: "prethodnoPoduzetnistvo", label: "Prethodno poduzetničko iskustvo", long: true },
-  ],
-  "2-subjekt": [
-    { name: "vrstaSubjekta", label: "Vrsta poslovnog subjekta", long: true },
-    { name: "strukturaVlasnistva", label: "Struktura vlasništva", long: true },
-    { name: "sjediste", label: "Sjedište (mjesto/grad)" },
-    { name: "nkd", label: "NKD (odabrani kodovi)", long: true },
-    { name: "iznosPotpore", label: "Iznos tražene potpore (€)" },
-    { name: "neprihvatljive", label: "Neprihvatljive djelatnosti (info)", long: true },
-  ],
-  "3-1-poduzetnik": [
-    { name: "radnoIskustvoRad", label: "Radno iskustvo (ugovor o radu)", long: true },
-    { name: "radnoIskustvoOstalo", label: "Radno iskustvo (ugovor o djelu/student/volontiranje)", long: true },
-  ],
-  "3-2-predmet": [
-    { name: "vrstaIDjelatnost", label: "Vrsta subjekta i djelatnost", long: true },
-    { name: "idejaKompetencije", label: "Kako ste došli na ideju i zašto ste kompetentni", long: true },
-    { name: "opisUslugaLokacija", label: "Opis proizvoda/usluga i lokacija", long: true },
-    { name: "obitelj", label: "Bavi li se netko u obitelji srodnom djelatnošću" },
-    { name: "zaposljavanjeObrazlozenje", label: "Procjena zapošljavanja – obrazloženje", long: true },
-  ],
-  "3-3-ulaganja": [
-    { name: "ulaganjaHzz", label: "Varijabilni iznos HZZ – oprema/osnovna sredstva", long: true },
-    { name: "ulaganjaDrugi", label: "Ulaganja iz drugih izvora (tablica)", long: true },
-    { name: "prostor", label: "Prostor (sjedište, područje, coworking, VPS…)", long: true },
-    { name: "dozvole", label: "Dozvole/MTU (da/ne + opis)", long: true },
-    { name: "postojecaOprema", label: "Postojeća oprema/prijevozna sredstva", long: true },
-  ],
-  "3-4-trziste": [
-    { name: "korisnici", label: "Potencijalni korisnici / orijentacija tržišta", long: true },
-    { name: "prepoznatljivost", label: "Procjena prepoznatljivosti / potražnje", long: true },
-    { name: "obavjestavanje", label: "Način obavještavanja / kanali", long: true },
-    { name: "web", label: "Plan web stranice" },
-    { name: "nabava", label: "Tržište nabave (suradnje, dokazi, RH/inozemstvo)", long: true },
-    { name: "konkurencija", label: "Konkurencija", long: true },
-    { name: "razlikovanje", label: "Po čemu ste drugačiji / aktivnosti", long: true },
-  ],
-  "3-5-prihodi": [
-    { name: "tab21", label: "Tablica 2.1 – Prihodi 1. godina", long: true },
-    { name: "tab22", label: "Tablica 2.2 – Prihodi 2. godina", long: true },
-  ],
-  "3-6-troskovi": [
-    { name: "tab31", label: "Tablica 3.1 – Trošak rada 1. godina", long: true },
-    { name: "tab32", label: "Tablica 3.2 – Trošak rada 2. godina", long: true },
-    { name: "tab41", label: "Tablica 4.1 – Ostali troškovi 1. godina", long: true },
-    { name: "tab42", label: "Tablica 4.2 – Ostali troškovi 2. godina", long: true },
-  ],
-  "3-7-dobit": [{ name: "dobitTab", label: "Račun dobiti/dohotka (1. i 2. godina)", long: true }],
-  "4-troskovnik": [{ name: "troskovnik", label: "Troškovnik (fiksni dio + informatička oprema…)", long: true }],
-  "5-prilozi": [{ name: "prilozi", label: "Popis priloga (FINA, izjava, ponude, ostalo…)", long: true }],
+type SectionId = string;
+type FormState = Record<string, string>;
+type SectionData = {
+  left: FormState;
+  right: FormState;
+  rightHints: Record<string, string>;
 };
 
-type FormState = Partial<Record<string, string>>;
-type SectionData = { left: FormState; right: FormState; rightHints: Record<string, string> };
+type UiSectionLite = { id: string; title: string; fields: any[] };
+type Group = { id: string; title: string; children: UiSectionLite[] };
 
-/** ===============================
- *  Primjer (lijevo – za auto-popunu)
- *  =============================== */
-const EXAMPLE_LEFT: Partial<Record<SectionId, FormState>> = {
-  "1-podnositelj": {
-    podrucniUred: "Područna služba ZAGREB",
-    ime: "BRUNO SEBASTIAN",
-    prezime: "PENZAR",
-    oib: "00357376233",
-    zanimanje: "Programer računalnih aplikacija.",
-    datumRodenja: "28.10.1993.",
-    adresa: "Ulica Đure Crnatka 24",
-    grad: "10 000 Zagreb",
-    telefon: "+385 97 611 2569",
-    email: "penzar.bruno@gmail.com",
-  },
-};
-
-/** helpers */
-function emptySection(sectionId: SectionId): SectionData {
-  const names = FIELDS_BY_SECTION[sectionId].map((f) => f.name);
-  const blank: FormState = Object.fromEntries(names.map((n) => [n, ""]));
-  return { left: { ...blank }, right: { ...blank }, rightHints: {} };
-}
-
-/** mock webhook/refine */
-async function refineViaWebhook(
-  payload: FormState,
-  section: SectionId
-): Promise<{ values: FormState; hints: Record<string, string> }> {
-  const fields = FIELDS_BY_SECTION[section];
-  const hints: Record<string, string> = {};
-  const values: FormState = { ...payload };
-
-  fields.forEach((f) => {
-    const v = (payload[f.name] ?? "").trim();
-    if (!v) {
-      hints[f.name] = "Nedostaje unos za ovo polje.";
-      values[f.name] = "";
-    }
+// Grupiranje sekcija po top-level broju (1,2,3…)
+function groupSections(sections: UiSectionLite[]): Group[] {
+  const byTop: Record<string, UiSectionLite[]> = {};
+  sections.forEach((s) => {
+    const top = s.id.split(".")[0];
+    (byTop[top] ||= []).push(s);
   });
 
-  return { values, hints };
+  const groups = Object.entries(byTop).map(([topId, arr]) => {
+    arr.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+    const title =
+      arr.length > 1 ? (arr[0].title.split(" - ")[0] || arr[0].title) : arr[0].title;
+    return { id: topId, title, children: arr };
+  });
+
+  groups.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+  return groups;
 }
 
-/** ===============================
- *  UI
- *  =============================== */
+// helpers
+function getSection(sectionId: SectionId) {
+  const sec = UI_SECTIONS.find((s) => s.id === sectionId);
+  if (!sec) throw new Error(`Nepoznata sekcija: ${sectionId}`);
+  return sec;
+}
+function blankFor(sectionId: SectionId): FormState {
+  const sec = getSection(sectionId);
+  return Object.fromEntries(sec.fields.map((f: any) => [f.name, ""]));
+}
+
+
+
+function Spinner({ size = 16, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg
+      className={`animate-spin ${className}`}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+        fill="none"
+      />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+      />
+    </svg>
+  );
+}
+
+
+
+
 export default function HzzPage() {
-  const [active, setActive] = useState<SectionId>("1-podnositelj");
+  // Aktivna sekcija
+  const [active, setActive] = useState<SectionId>(UI_SECTIONS[0]?.id ?? "1");
+  // širina lijevog panela u %, ograničit ćemo 20–80
+  const [leftWidth, setLeftWidth] = useState<number>(50);
+
+
+  // Globalni state za lijevu i desnu stranu po sekciji
   const initialAll = useMemo(() => {
-    const obj: Record<SectionId, SectionData> = {} as any;
-    SECTIONS.forEach((s) => (obj[s.id] = emptySection(s.id)));
+    const obj: Record<SectionId, SectionData> = {};
+    UI_SECTIONS.forEach(
+      (s) =>
+        (obj[s.id] = {
+          left: blankFor(s.id),
+          right: blankFor(s.id),
+          rightHints: {},
+        })
+    );
     return obj;
   }, []);
   const [data, setData] = useState<Record<SectionId, SectionData>>(initialAll);
-  const [isSending, setIsSending] = useState(false);
 
-  function setLeft(sectionId: SectionId, patch: Partial<FormState>) {
-    setData((prev) => ({ ...prev, [sectionId]: { ...prev[sectionId], left: { ...prev[sectionId].left, ...patch } } }));
-  }
-  function setRight(sectionId: SectionId, values: FormState, hints?: Record<string, string>) {
+  // Idea + CV upload (lijevi panel)
+  const [idea, setIdea] = useState<string>("");
+  const [cvB64, setCvB64] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  // Grupirani tabovi za stepper na desnom headeru
+  const groups = useMemo(
+    () => groupSections(UI_SECTIONS as unknown as UiSectionLite[]),
+    []
+  );
+
+  // state helpers
+  function setRight(
+    sectionId: SectionId,
+    values: FormState,
+    hints?: Record<string, string>
+  ) {
     setData((prev) => ({
       ...prev,
-      [sectionId]: { ...prev[sectionId], right: { ...prev[sectionId].right, ...values }, rightHints: hints ?? prev[sectionId].rightHints },
+      [sectionId]: {
+        ...prev[sectionId],
+        right: { ...prev[sectionId].right, ...values },
+        rightHints: hints ?? prev[sectionId].rightHints,
+      },
     }));
   }
 
-  function fillExample() {
-    const ex = EXAMPLE_LEFT[active] || {};
-    setLeft(active, ex);
+  // file utils
+  function readFileAsBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const fr = new FileReader();
+      fr.onload = () => resolve(String(fr.result).split(",")[1] || "");
+      fr.onerror = reject;
+      fr.readAsDataURL(file);
+    });
+  }
+  async function onCvSelected(file?: File | null) {
+    if (!file) {
+      setCvB64(null);
+      return;
+    }
+    const b64 = await readFileAsBase64(file);
+    setCvB64(b64);
   }
 
-  async function submitSection() {
-    setIsSending(true);
+  // STUB: za sada puni desnu stranu iz postojećih primjera
+  async function generateFromExample() {
+    setIsGenerating(true);
     try {
-      const payload = data[active].left;
-      const { values, hints } = await refineViaWebhook(payload, active);
-      setRight(active, values, hints);
+      UI_SECTIONS.forEach((s) => setRight(s.id, blankFor(s.id), {} as any));
+      for (const s of UI_SECTIONS) {
+        const ex = exampleFor(s.id) || {};
+        setRight(s.id, { ...ex });
+      }
+      setActive(UI_SECTIONS[0]?.id ?? "1");
     } finally {
-      setIsSending(false);
+      setIsGenerating(false);
     }
   }
 
-  function downloadPDF() {
-    alert("PDF će koristiti DESNA (uređena) polja aktivne sekcije.");
-  }
-  function downloadWord() {
-    alert("Word će koristiti DESNA (uređena) polja aktivne sekcije.");
-  }
-  function callWebhook() {
-    alert("Webhook n8n – ovdje ćemo spojiti stvarni URL.");
-  }
 
-  const sectionMeta = SECTIONS.find((s) => s.id === active)!;
-  const left = data[active].left;
+
+
+
+
+// MINIMAL: šalje SAMO { examples } na /api/hzz-debug
+async function debugWebhook() {
+  setIsGenerating(true);
+  try {
+    const examples = Object.fromEntries(
+      UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}])
+    );
+
+    // pripremi payload: examples + idea (+ opcionalno CV)
+    const payload = {
+      examples,
+      idea: idea?.trim() || null,     // ili "" ako želiš
+      // cvB64: cvB64 ?? undefined,   // uključi ako ga želiš slati
+    };
+
+    const res = await fetch("/api/hzz-debug", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const json = await res.json();
+
+    const exMap =
+      json?.n8n?.body?.examples ??
+      json?.n8n?.echo?.examples ??
+      json?.examples ?? null;
+
+    if (exMap && typeof exMap === "object") {
+      UI_SECTIONS.forEach((s: any) => setRight(s.id, blankFor(s.id), {} as any));
+      for (const s of UI_SECTIONS) {
+        const ex = exMap[s.id];
+        if (ex && typeof ex === "object") setRight(s.id, ex);
+      }
+      setActive(UI_SECTIONS[0]?.id ?? "1");
+    } else {
+      console.warn("Webhook odgovor nema 'examples' mapu.");
+    }
+  } finally {
+    setIsGenerating(false);
+  }
+}
+
+
+
+
+
+
+
+
+// Escape malicioznih znakova pri izlazu u HTML
+function esc(s: string) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+
+
+function exportAllSectionsPdf() {
+  const all = UI_SECTIONS; // sve sekcije iz uvoza
+  const htmlParts = all.map((sec: any) => {
+    const values = data[sec.id]?.right || {};
+    const isBlank = Object.values(values).every((v) => !v);
+
+    // ako želiš preskočiti prazne sekcije, ostavi ovaj if
+    if (isBlank) return "";
+
+    const rows = sec.fields
+      .map((f: any) => {
+        const label = f.label || f.title || f.name;
+        const val = values?.[f.name] ?? "";
+        return `<tr>
+          <th>${esc(label)}</th>
+          <td>${esc(val).replace(/\n/g, "<br/>")}</td>
+        </tr>`;
+      })
+      .join("");
+
+    return `
+      <h2>${esc(sec.id)}) ${esc(sec.title)}</h2>
+      <table>${rows}</table>
+      <hr/>
+    `;
+  });
+
+  const html = `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>HZZ – svi odgovori</title>
+<style>
+  @page { size: A4; margin: 14mm; }
+  body { font: 12px system-ui, -apple-system, Segoe UI, Roboto, Arial; color: #111; }
+  h1 { font-size: 18px; margin: 0 0 10px 0; }
+  h2 { font-size: 15px; margin: 20px 0 6px 0; }
+  .meta { font-size: 11px; color: #555; margin: 0 0 12px 0; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+  th, td { border: 1px solid #ddd; padding: 6px 8px; vertical-align: top; }
+  th { width: 36%; background: #f7f7f7; text-align: left; }
+  hr { border: none; border-top: 1px solid #ccc; margin: 18px 0; }
+</style>
+</head>
+<body>
+  <h1>Svi odgovori – HZZ zahtjev</h1>
+  <div class="meta">Generirano: ${esc(new Date().toLocaleString())}</div>
+  ${htmlParts.join("\n")}
+  <script>
+    window.onload = () => { window.print(); setTimeout(() => window.close(), 250); };
+  </script>
+</body>
+</html>`;
+
+  const win = window.open("", "_blank");
+  if (!win) return alert("Popup blokiran. Dozvoli otvaranje novog prozora.");
+  win.document.write(html);
+  win.document.close();
+}
+
+
+
+
+
+
+
+
+
+
+  // derived (desni panel)
+  const section = getSection(active);
   const right = data[active].right;
   const rightHints = data[active].rightHints;
   const rightIsBlank = Object.values(right).every((v) => !v);
 
   return (
     <div className="h-screen overflow-hidden bg-neutral-50 text-neutral-900">
-      <div className="grid grid-cols-2 gap-4 h-full p-3 min-h-0">
-        {/* ===== Lijevo ===== */}
-        <div className="flex flex-col bg-white border rounded-md min-h-0">
-          {/* header */}
-          <div className="sticky top-0 z-30 bg-white border-b">
-            <div className="p-2">
-              <div className="flex flex-wrap gap-2">
-                {SECTIONS.map((s) => (
-                  <button
-                    key={s.id}
-                    onClick={() => setActive(s.id)}
-                    className={[
-                      "px-3 py-1 rounded-full text-sm border transition",
-                      active === s.id ? "bg-black text-white border-black" : "bg-white hover:bg-neutral-100 text-neutral-800",
-                    ].join(" ")}
-                    title={s.full}
-                  >
-                    {s.short}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-          {/* body */}
-          <div className="flex-1 overflow-y-auto min-h-0">
-            <SectionForm fields={FIELDS_BY_SECTION[active]} values={left} onChange={(k, v) => setLeft(active, { [k]: v })} />
-          </div>
-          {/* footer */}
-          <div className="sticky bottom-0 z-30 bg-white border-t p-3 flex items-center gap-2">
-            <button onClick={fillExample} className="px-3 py-2 rounded border text-neutral-900">
-              Ispuni primjerom
-            </button>
-            <div className="ml-auto flex gap-2">
-              <button onClick={submitSection} disabled={isSending} className="px-4 py-2 rounded bg-black text-white disabled:opacity-60">
-                {isSending ? "Slanje…" : "Pošalji sekciju"}
-              </button>
-            </div>
-          </div>
-        </div>
+	<div className="flex h-full p-3 min-h-0">
+	  {/* ===== Lijevo: idea + CV ===== */}
+	  <div
+	    className="flex flex-col bg-white border rounded-md min-h-0 overflow-hidden"
+	    style={{ width: `${leftWidth}%`, marginRight: "0.5rem" }} // ~gap-2
+	  >
+	    <div className="sticky top-0 z-30 bg-white border-b">
+		<div className="p-3 flex items-center justify-between gap-3">
+		    <div>
+		      <h2 className="text-base font-semibold">Plan i ulazni podaci</h2>
+		      <div className="text-xs text-neutral-600">
+			Opiši obrt i ciljeve. Na temelju toga generirat ćemo kompletan primjer.
+		      </div>
+		    </div>
 
-        {/* ===== Desno ===== */}
-        <div className="flex flex-col bg-white border rounded-md min-h-0">
-          <div className="sticky top-0 z-30 bg-white border-b p-3">
-            <div className="flex items-baseline gap-3">
-              <h2 className="text-lg font-semibold">Pitanja</h2>
-              <span className="text-sm text-neutral-600">({sectionMeta.full})</span>
-            </div>
-            <div className="text-xs text-neutral-500 mt-1">
-              Desna strana je prazna dok ne pošaljete sekciju. Nakon povratka možete je dodatno urediti.
-            </div>
-          </div>
+		    <button
+		      onClick={generateFromExample}
+		      className="px-3 py-1.5 rounded border text-sm hover:bg-neutral-100"
+		      title="Učitaj ugrađene primjere u desni panel"
+		    >
+		      Use existing example
+		    </button>
+		  </div>
+	    </div>
 
-          <div className="flex-1 overflow-y-auto min-h-0">
-            {rightIsBlank ? (
-              <div className="p-6 text-sm text-neutral-500">
-                Još nema podataka za ovu sekciju. Ispuni lijevo i klikni <b>“Pošalji sekciju”</b>.
-              </div>
-            ) : (
-              <SectionForm fields={FIELDS_BY_SECTION[active]} values={right} hints={rightHints} onChange={(k, v) => setRight(active, { [k]: v })} />
-            )}
-          </div>
+	    <div className="flex-1 overflow-y-auto min-h-0 p-3 space-y-3">
+	      <label className="text-sm font-medium">Kratak opis plana (idea)</label>
+		<textarea
+		  className="block w-full rounded-md border px-3 py-2 text-sm border-neutral-300 bg-white min-h-[120px] resize-y"
+		  placeholder="Vrsta obrta, usluge, ciljni klijenti, tržišta, kanali prodaje, ključni alati/tehnologije, lokacija, plan troškova/prihoda…"
+		  value={idea}
+		  onChange={(e) => setIdea(e.target.value)}
+		/>
+	      
+	      {/*
+	      <div>
+		<label className="text-sm font-medium">Životopis (PDF/DOCX/TXT)</label>
+		<input
+		  type="file"
+		  accept=".pdf,.doc,.docx,.txt"
+		  className="mt-1 block w-full text-sm"
+		  onChange={(e) => onCvSelected(e.target.files?.[0] ?? null)}
+		/>
+		<div className="text-xs text-neutral-500 mt-1">
+		  {cvB64 ? "Datoteka učitana." : "Nije učitano."}
+		</div>
+	      </div> 
+	      */}
+	     
+		<button
+		  onClick={debugWebhook}
+		  className="px-4 py-2 rounded bg-black text-white disabled:opacity-60"
+		  disabled={isGenerating || (!idea && !cvB64)}
+		  aria-busy={isGenerating}
+		>
+		  {isGenerating ? (
+		    <span className="inline-flex items-center gap-2">
+		      Generiranje primjera 
+          <Spinner className="text-white" />
+		    </span>
+		  ) : (
+		    "Generiraj novi primjer"
+		  )}
+		</button>
 
-          <div className="sticky bottom-0 z-30 bg-white border-t p-3 flex items-center gap-2">
-            <button onClick={callWebhook} className="px-3 py-2 rounded border text-neutral-900">
-              Webhook: n8n
-            </button>
-            <div className="ml-auto flex gap-2">
-              <button onClick={downloadPDF} className="px-3 py-2 rounded border text-neutral-900">
-                Preuzmi PDF
-              </button>
-              <button onClick={downloadWord} className="px-3 py-2 rounded border text-neutral-900">
-                Preuzmi Word
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-/** ===== Reusable form ===== */
-function SectionForm({
-  fields,
-  values,
-  onChange,
-  hints,
-}: {
-  fields: Field[];
-  values: FormState;
-  onChange: (name: string, value: string) => void;
-  hints?: Record<string, string>;
-}) {
-  return (
-    <div className="p-3 space-y-4">
-      {fields.map((f) => (
-        <FieldControl
-          key={f.name}
-          label={f.label}
-          value={values[f.name] ?? ""}
-          long={f.long}
-          placeholder={hints?.[f.name] ? hints[f.name] : f.placeholder}
-          missing={Boolean(hints?.[f.name])}
-          onChange={(val) => onChange(f.name, val)}
-        />
-      ))}
-    </div>
-  );
-}
+	     
+	    </div>
+	  </div>
 
-function FieldControl({
-  label,
-  value,
-  onChange,
-  long,
-  placeholder,
-  missing,
-}: {
-  label: string;
-  value: string;
-  long?: boolean;
-  placeholder?: string;
-  missing?: boolean;
-  onChange: (v: string) => void;
-}) {
-  const base = "w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 text-neutral-900 placeholder:text-neutral-400";
-  const cls = [base, missing ? "border-red-300 focus:ring-red-200 placeholder:text-red-500" : "focus:ring-neutral-200"].join(" ");
+	  {/* ===== Resizer ===== */}
+	  <div
+	    className="w-1 bg-neutral-300 rounded cursor-col-resize select-none"
+	    onMouseDown={(e) => {
+	      e.preventDefault();
+	      const startX = e.clientX;
+	      const startWidth = leftWidth;
 
-  return (
-    <div className="space-y-1">
-      <div className="text-sm font-medium text-neutral-800">{label}</div>
-      {long ? (
-        <textarea className={`${cls} min-h-[120px]`} value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)} />
-      ) : (
-        <input className={cls} value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)} />
-      )}
+	      function onMove(ev: MouseEvent) {
+		const delta = ev.clientX - startX;
+		const percentDelta = (delta / window.innerWidth) * 100;
+		const next = Math.min(80, Math.max(20, startWidth + percentDelta));
+		setLeftWidth(next);
+	      }
+	      function onUp() {
+		document.removeEventListener("mousemove", onMove);
+		document.removeEventListener("mouseup", onUp);
+	      }
+	      document.addEventListener("mousemove", onMove);
+	      document.addEventListener("mouseup", onUp);
+	    }}
+	    style={{ margin: "0 0.5rem" }} // ~gap-2
+	    title="Povuci za promjenu širine"
+	  />
+
+	  {/* ===== Desno: Stepper + forma ===== */}
+	  <div
+	    className="flex flex-col bg-white border rounded-md min-h-0 overflow-hidden flex-1"
+	    style={{ width: `${100 - leftWidth}%` }}
+	  >
+	    <div className="sticky top-0 z-30 bg-white border-b p-3">
+	      <div className="p-2 -mt-2 -mb-1 overflow-x-auto">
+		<div className="flex gap-2 whitespace-nowrap">
+		  {groups.map((g) => {
+		    const groupOpen = active.split(".")[0] === g.id;
+		    return (
+		      <div key={g.id} className="inline-block">
+		        <button
+		          onClick={() => setActive(g.children[0].id)}
+		          className={[
+		            "px-3 py-1 rounded-full text-sm border transition mr-2",
+		            groupOpen
+		              ? "bg-black text-white border-black"
+		              : "bg-white hover:bg-neutral-100 text-neutral-800",
+		          ].join(" ")}
+		          title={`${g.id}) ${g.title}`}
+		        >
+		          {groupOpen ? `${g.id}) ${g.title}` : g.id}
+		        </button>
+
+		        {groupOpen && g.children.length > 1 && (
+		          <div className="mt-2 ml-4 inline-flex gap-2 align-middle">
+		            {g.children.map((child) => {
+		              const isActiveChild = active === child.id;
+		              return (
+		                <button
+		                  key={child.id}
+		                  onClick={() => setActive(child.id)}
+		                  className={[
+		                    "px-3 py-1 rounded-full text-sm border transition",
+		                    isActiveChild
+		                      ? "bg-black text-white border-black"
+		                      : "bg-white hover:bg-neutral-100 text-neutral-800",
+		                  ].join(" ")}
+		                  title={`${child.id}) ${child.title}`}
+		                >
+		                  {isActiveChild
+		                    ? `${child.id}) ${child.title}`
+		                    : child.id}
+		                </button>
+		              );
+		            })}
+		          </div>
+		        )}
+		      </div>
+		    );
+		  })}
+		</div>
+	      </div>
+
+	      <div className="flex items-baseline gap-3 mt-2">
+		<h2 className="text-lg font-semibold">Pitanja</h2>
+		<span className="text-sm text-neutral-600">
+		  ({active}) {section.title}
+		</span>
+	      </div>
+	      <div className="text-xs text-neutral-500 mt-1">
+		Desna strana je prazna dok ne generiraš primjer ili dok ne pošalješ
+		podatke.
+	      </div>
+	    </div>
+
+	    <div className="flex-1 overflow-y-auto min-h-0 p-3">
+	      {rightIsBlank ? (
+		<div className="p-4 text-sm text-neutral-500">
+		  Još nema podataka za ovu sekciju. Koristi <b>“Generiraj primjer”</b> s
+		  lijeve strane.
+		</div>
+	      ) : (
+		<SectionForm
+		  fields={section.fields}
+		  values={right}
+		  hints={rightHints}
+		  onChange={(k, v) => setRight(active, { ...right, [k]: v })}
+		/>
+	      )}
+	    </div>
+
+	    <div className="sticky bottom-0 z-30 bg-white border-t p-3 flex items-center gap-2 justify-end">
+	      <button onClick={exportAllSectionsPdf} 
+	       className="px-3 py-2 rounded bg-red-700 text-white border border-black hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 active:bg-red-800 disabled:opacity-60"
+	       aria-label="Preuzmi PDF"
+	      >
+		Preuzmi PDF
+	      </button>
+	    </div>
+	  </div>
+	</div>
     </div>
   );
 }

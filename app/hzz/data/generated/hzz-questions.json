@@ -1,6 +1,6 @@
 {
   "1": {
-    "podrucni_ured": "Odaberite nadležni područni ured (prema mjestu otvaranja):",
+    "podrucni_ured": "Odaberite nadležni područni ured za koji želite podnijeti zahtjev (*Odabir treba biti vezan uz mjesto gdje želite otvoriti poduzeće, a mjesto je u nadležnosti odabranog područnog ureda)",
     "ime": "Ime",
     "prezime": "Prezime",
     "oib": "OIB",
@@ -12,77 +12,95 @@
     "kontakt_email": "Kontakt (e-mail)",
     "osnovna_skola": "Osnovna škola (mjesto i godina završetka)",
     "srednja_skola": "Srednja škola (naziv škole i godina završetka)",
-    "fakultet": "Fakultet, magisterij, doktorat (naziv ustanove i godina diplome)",
+    "fakultet": "Fakultet, magisterij, doktorat (naziv obrazovne ustanove i godina stjecanja diplome)",
     "usavrsavanje": "Osposobljavanje i usavršavanje (koje ste završili)",
-    "edukacije_za_vodenje": "Završene edukacije za vođenje poslovanja (računovodstvo, marketing…)",
+    "edukacije_za_vodenje": "Završene edukacije za vođenje poslovanja (kao što je npr. računovodstvo, marketing, prodaja, itd. ili neku drugu vrstu edukacije koju smatrate bitnim za poslovanje)",
     "hobiji": "Hobiji i drugi interesi",
-    "radionica": "Radionica za samozapošljavanje (datum i mjesto)",
-    "preth_poduzet_iskustvo": "Prethodno poduzetničko iskustvo (naziv, OIB, djelatnost, status, razdoblje, obveze, HZZ sredstva, razlog prestanka)"
+    "radionica": "Radionica za samozapošljavanje (upišite datum i mjesto)",
+    "preth_poduzet_iskustvo": "Prethodno poduzetničko iskustvo\nNaziv poslovnog subjekta (*Popunjavaju osobe koje su prethodno imale registriran poslovni subjekt)",
+    
+    "oib_poslovnog_subjekta": "OIB poslovnog subjekta",
+    "djelatnost": "Djelatnost",
+    "status": "Status\n(  )vlasnik/ca; (  )suvlasnik/ca",
+    "aktivan_od": "Aktivan od",
+    "aktivan_do": "Aktivan do",
+    "podmirene_obveze": "„Podmirene obveze\n(  )Da; (  )Ne“",
+    "koristio_hzz_sredstva": "Koristio/la sredstva HZZ-a\n(  )Da; (  )Ne",
+    "razlog_prestanka_djelatnosti": "Razlog prestanka obavljanja djelatnosti"
   },
   "2": {
-    "vrsta_subjekta": "Vrsta poslovnog subjekta (d.o.o./j.d.o.o., obrt paušalni, obrt knjige, samostalna djelatnost, ostalo)",
-    "struktura_vlasnistva": "Struktura vlasništva (jedan vlasnik/suvlasništvo i udjeli)",
-    "sjediste": "Sjedište budućeg poslovnog subjekta (adresa, mjesto/grad)",
-    "nkd": "Djelatnosti prema NKD (popis šifri i naziva)",
-    "iznos_trazene_potpore": "Iznos tražene potpore (EUR)",
-    "neprihvatljive_djelatnosti": "Neprihvatljive djelatnosti (informativno)"
+    "vrsta_subjekta": "Vrsta poslovnog subjekta (*označite vrstu poslovnog subjekta koji planirate registrirati)\n(  )d.o.o./j.d.o.o.; (  )obrt s paušalnim oporezivanjem; (  )obrt – poslovne knjige; (  ) samostalna djelatnost; (  )ostal",
+    "struktura_vlasnistva": "Struktura vlasništva budućeg poslovnog subjekta\n(  )Jedan vlasnik; (  )Suvlasništvo",
+    "sjediste": "Sjedište budućeg poslovnog subjekta (mjesto/grad)",
+    "nkd": "Unos djelatnosti prema Nacionalnoj klasifikaciji djelatnosti (dalje u tekstu NKD)\nSlužbeni popis svih djelatnosti možete vidjeti na poveznici:\nhttps://narodne-novine.nn.hr/clanci/sluzbeni/2024_04_47_800.html",
+    "iznos_trazene_potpore": "Iznos tražene potpore: (*Upisati točan iznos tražene potpore)"
   },
   "3.1": {
-    "iskustvo_ugovor_o_radu": "Kronološko radno iskustvo (ugovor o radu) – razdoblje, poslodavac, opis poslova",
-    "iskustvo_ostalih_vrsta": "Kronološko radno iskustvo (ugovor o djelu/studentski/volontiranje…) – razdoblje, poslodavac, opis poslova"
+    "radno_iskustvo_ugovorom_o_radu": "Navedite kronološki dosadašnje radno iskustvo ostvareno temeljem ugovora o radu (*Navedite kronološki dosadašnje radno iskustvo)",
+    "radno_iskustvo_ostalih_vrsta": "Navedite kronološki dosadašnje radno iskustvo ostvareno temeljem ugovora o djelu, studentskog ugovora, ugovora o volontiranju i/ili potvrde o vrsti poslova (*Navedite kronološki dosadašnje radno iskustvo)"
   },
   "3.2": {
-    "pravni_oblik_i_djelatnost": "Vrsta subjekta koji registrirate i za koju djelatnost",
-    "motivacija_i_kompetencije": "Kako je nastala ideja + veza s iskustvom + znanje i sposobnosti",
-    "opis_proizvoda_usluga": "Detaljan opis proizvoda/usluga i lokacija obavljanja (za svaku djelatnost)",
-    "obitelj_srodna_djelatnost": "Bavi li se netko u obitelji srodnom djelatnošću? Ako da – podaci.",
-    "zaposljavanje_procjena": "Procjenjujete li potrebu za zapošljavanjem u prvoj godini? Obrazložite."
+    "pravni_oblik_i_djelatnost": "Navedite koju vrstu poslovnog subjekta namjeravate registrirati i za koju djelatnost",
+    "motivacija_i_kompetencije": "Opišite kako ste došli na ideju o pokretanju vlastitog posla te povežite s dosadašnjim radnim iskustvom. Navedite zašto smatrate da Vi (i Vaši poslovni partneri) imate znanje i sposobnost da predloženu poslovnu inicijativu učinite uspješnom.",
+    "opis_proizvoda_usluga": "Opišite detaljno vrstu proizvoda i/ili usluge koju planirate ponuditi tržištu te pojasnite na kojoj lokaciji namjeravate obavljati djelatnost. Ukoliko planirate obavljati više djelatnosti, navedite pojedinosti za svaku od njih.",
+    "obitelj_srodna_djelatnost": "Bavi li se netko u vašoj obitelji (ili se unazad 12 mjeseci bavio) istom/srodnom djelatnošću?\n(  )Da; (  )Ne\nUkoliko je odgovor DA, molimo u nastavku navedite podatke o obiteljskom poslovnom subjektu.",
+    "naziv_obiteljske_srodna_djelatnost": "Naziv",
+    "oib_obiteljske_srodna_djelatnost": "OIB",
+    "adresa_obiteljske_srodna_djelatnost": "Adresa",
+    "djelatnost_obiteljske_srodna_djelatnost": "Djelatnost",
+    "procjena_zaposljavanja_u_prvoj_godini": "Procjenjujete li da ćete u prvoj godini poslovanja imati potrebu za zapošljavanjem drugih radnika?\n(  )Da; (  )Ne; (  )U ovom trenutku ne mogu procijeniti",
+    "razlog_procjena_zaposljavanja_u_prvoj_godini": "Molimo da obrazložite odgovor."
   },
   "3.3": {
-    "ulaganja_varijabilni_hzz": "Obrazložite u što ulažete varijabilni iznos HZZ-a (osnovna sredstva/oprema)",
-    "ulaganja_iz_drugih_izvora": "Ulaganja iz drugih izvora (tablica: vrsta ulaganja + iznos)",
-    "prostor_i_dozvole": "Potreban prostor i dozvole (status prostora, grad/mjesto, područje djelovanja, potrebne dozvole)",
-    "postojeca_oprema": "Popis postojeće opreme i prijevoznih sredstava"
+    "ulaganja_varijabilni_hzz": "Obrazložite u što namjeravate uložiti varijabilni iznos sredstava HZZ-a neophodnih za obavljanje djelatnosti u prvoj godini poslovanja – to mogu biti osnovna sredstva i oprema (navesti koja).",
+    "ulaganja_iz_drugih_izvora": "Navedite u što namjeravate uložiti sredstva iz drugih izvora financiranja u prvoj i drugoj godini poslovanja – to mogu biti osnovna sredstva i oprema (navesti koja), materijal i sirovina potrebni za rad, vozilo, oprema za uređenje prostora, edukacije i sl. Navedene stavke navesti u tablice s obzirom na izvor financiranja.\nTablica 1.\n Vrsta ulaganja | Iznos\n(Dodaj novi red)",
+    "prostor_i_dozvole": "Potreban prostor i dozvole za rad\nPodaci o Vašem poslovnom prostoru:\n(  )u vlasništvu; (  )u zakupu; (  ) nije potreban",
+    "grad_i_prostor_detalji": "Navedite u kojem gradu/mjestu planirate registrirati sjedište budućeg poslovnog subjekta te na kojem području planirate obavljati djelatnost. Ukoliko vam je potreban poslovni prostor, navedite detalje o tome imate li osiguran prostor u svom vlasništvu, vlasništvu obitelji ili ga planirate zakupiti.",
+    "potrebne_dozvole": "Jesu li za obavljanje Vaše djelatnosti potrebne određene dozvole, odobrenja, atesti ili zadovoljavanje minimalnih tehničkih uvjeta?\n(  )Da; (  )Ne",
+    "koje_potrebne_dozvole": "Ako da, koje?",
+    "koje_potrebne_dozvole_potrebno_nabaviti": "Navedite koja odobrenja, ateste, licence i sl. još morate ishoditi ili nabaviti.",
+    "postojeca_oprema_i_prijevozna_sredstva": "Navedite popis opreme i prijevoznih sredstava koje već posjedujete za obavljanje Vaše djelatnosti."
   },
   "3.4": {
-    "potencijalni_klijenti_geografija": "Potencijalni korisnici/klijenti i dio tržišta (lokalitet)",
-    "kako_znate_da_ce_biti_potražnja": "Način procjene da će usluge biti prepoznate i da će biti dovoljno klijenata",
-    "kanali_promocije": "Na koji način ćete obavještavati kupce/klijente (označite/objasnite kanale)",
-    "web_stranica": "Plan izrade poslovne web stranice (i poveznica ako postoji)",
-    "trziste_nabave_partneri": "Tržište nabave: dobavljači/partneri i dokazi (predugovori/pisma namjere)",
-    "konkurencija": "Tko je konkurencija (prednosti/slabosti u odnosu na vas)",
-    "diferencijacija": "Po čemu ste drugačiji + konkretne aktivnosti privlačenja klijenata",
-    "inovativnost": "Uvodite li novi/inovativni proizvod ili tehničko-tehnološki proces? Obrazložite."
+    "potencijalni_klijenti_geografija": "Tko su potencijalni korisnici ili klijenti Vaših proizvoda /usluga, te na koji dio tržišta se planirate orijentirati (odrediti lokalitet: grad, županija, država)?",
+    "kako_znate_da_ce_biti_potražnja": "Navedite na koji način ste procijenili da će Vaši proizvodi/usluge biti prepoznati na tržištu te da ćete imati dovoljno klijenata za uspješno poslovanje?",
+    "kanali_promocije": "Na koji način ćete obavještavati potencijalne kupce/klijente o ponudi svojih proizvoda/usluga?\nOznačite moguće odgovore.\n[ ]posjetnice; [ ]usmena reklama i preporuke; [ ]brošure i letci; [ ]plaćeni oglasi u novinama i časopisima; [ ]natpisi na vozilima; [ ]reklame na radiju i televiziji; [ ]poslovni sajmovi; [ ]društvene mreže",
+    "planirate_web_stranicu": "Planirate li izradu poslovne web stranice?\n(  )Da; (  )Ne zasad mi nije potrebna; (  )već je u izradi",
+    "adresa_web_stranice": "Ukoliko je web stranica u izradi ili već postoji, navedite poveznicu (link) iste:",
+    
+    "dogovorena_suradnja": "Imate li dogovorenu suradnju s dobavljačima i budućim poslovnim partnerima?\n(  )Da; (  )Ne zasad",
+    "dogovorena_suradnja_pisani_dokaz": "Ukoliko imate dogovorenu suradnju, možete li dostaviti pisane dokaze o istom (predugovore, pisma namjere drugih poslovnih subjekata i sl.)?\n(  )Da; (  )Ne zasad",
+    "znate_gdje_nabaviti_opremu": "Znate li gdje ćete nabavljati potrebnu opremu, materijal, sirovinu i sl. potrebnu za obavljanje Vaše djelatnosti?\n(  )Da; (  )Ne zasad",
+    "moguce_nabaviti_opremu_u_hrvatskoj": "Možete li sve potrebno nabaviti u Republici Hrvatskoj ili biste neku robu/usluge radije nabavljali u inozemstvu?\n(  )sve mogu nabaviti u RH; (  )neka inozemna roba/usluge bolje odgovaraju potrebama mog poslovanja",
+    "razlog_lokacije_nabave_opreme": "(navedite razlog):",
+    
+    
+    "konkurencija": "Tko je Vaša konkurencija? Molimo navedite podatke o Vašim glavnim konkurentima, njihovim prednostima i slabostima u odnosu na Vas.",
+    "diferencijacija_od_konkurencije": "Po čemu ćete biti drugačiji od svoje konkurencije? Navedite konkretne aktivnosti kojima ćete privući klijente (izbjegavati fraze “brži, bolji, jeftiniji“).",
+    "inovativnost_projekta": "Uvodite li ovim projektom novi ili inovativni proizvod ili tehničko-tehnološki proces?"
   },
   "3.5": {
-    "tablica_prihodi_god1": "Procjena prihoda – Tablica 2.1 (1. godina): naziv proizvoda/usluge, cijena, mjesečni broj, mjesečni prihod, godišnji prihod",
-    "tablica_prihodi_god2": "Procjena prihoda – Tablica 2.2 (2. godina): naziv proizvoda/usluge, cijena, mjesečni broj, mjesečni prihod, godišnji prihod"
+    "tablica_prihodi_god1_T2_1": "Tablica 2.1. - Procjena prihoda u prvoj godini poslovanja (*Molimo vas da u tablici nabrojite nekoliko Vaših osnovnih proizvoda ili usluga te njihovu okvirnu cijenu kako biste mogli izračunati očekivani prihod u prvoj godini poslovanja. Također je važna procjena količine prodanih proizvoda/usluga u jednom mjesecu (stupac 2) i možete ju odrediti na principu prosjeka: (najbolji mjesec + najlošiji mjesec) / 2.)\nNaziv proizvoda/usluge | Cijena pojedinog proizvoda/usluge | Broj očekivanih prodaja u jednom mjesecu | Očekivani mjesečni prihod od prodaje (pomnožiti stupac 2 i 3) | Očekivani godišnji prihod od prodaje (pomnožiti stupac 4 s 12)\nBLANK | 0,00 | 0,00 | 0,00 | 0,00\nBLANK | 0,00 | 0,00 | 0,00 | 0,00\nBLANK | 0,00 | 0,00 | 0,00 | 0,00\nUkupno | 0,00 | 0,00 | 0,00 | 0,00\nDodaj novi red",
+    "tablica_prihodi_god2_T2_2": "Tablica 2.2. - Procjena prihoda u drugoj godini poslovanja (*Molimo vas da u tablici nabrojite nekoliko Vaših osnovnih proizvoda ili usluga te njihovu okvirnu cijenu kako biste mogli izračunati očekivani prihod u drugoj godini poslovanja. Također je važna procjena količine prodanih proizvoda/usluga u jednom mjesecu (stupac 2) i možete ju odrediti na principu prosjeka: (najbolji mjesec + najlošiji mjesec) / 2.)\nNaziv proizvoda/usluge | Cijena pojedinog proizvoda/usluge | Broj očekivanih prodaja u jednom mjesecu | Očekivani mjesečni prihod od prodaje (pomnožiti stupac 2 i 3) | Očekivani godišnji prihod od prodaje (pomnožiti stupac 4 s 12)\nBLANK | 0,00 | 0,00 | 0,00 | 0,00\nBLANK | 0,00 | 0,00 | 0,00 | 0,00\nBLANK | 0,00 | 0,00 | 0,00 | 0,00\nUkupno | 0,00 | 0,00 | 0,00 | 0,00\nDodaj novi red"
   },
   "3.6": {
-    "trosak_rada_god1": "Trošak rada – Tablica 3.1 (1. godina): doprinosi/bruto plaće, ukupno",
-    "trosak_rada_god2": "Trošak rada – Tablica 3.2 (2. godina): doprinosi/bruto plaće, ukupno",
-    "ostali_troskovi_god1": "Ostali troškovi – Tablica 4.1 (1. godina): sirovine/materijal, režije, knjigovodstvo, ostalo, ukupno",
-    "ostali_troskovi_god2": "Ostali troškovi – Tablica 4.2 (2. godina): sirovine/materijal, režije, knjigovodstvo, ostalo, ukupno"
+    "trosak_rada_god1_T3_1": "Tablica 3.1. - Trošak rada u prvoj godini poslovanja (*Za trg. društvo navedite očekivanu mjesečnu bruto plaću (neto plaća + doprinosi) i pomnožite s 12 mjeseci. Za obrt ili samostalnu djelatnost, navedite iznos mjesečnih doprinosa i pomnožite s 12. Planirate li zapošljavanje drugih osoba u prvoj godini poslovanja, navedite u drugom stupcu očekivanu bruto plaću za tu osobu/osobe (neto plaća + doprinosi) i pomnožite s 12.)\nTrošak rada u prvoj godini poslovanja | Mjesečni iznos | Godišnji iznos\nBruto plaća ili doprinosi za obrtnike / RPO | 0,00 | 0,00\nBruto plaća za zaposlenike | 0,00 | 0,00\nUkupni troškovi rada | 0,00 | 0,00",
+    "trosak_rada_god2_T3_2": "Tablica 3.2. - Trošak rada u drugoj godini poslovanja (*Za trg. društvo navedite očekivanu mjesečnu bruto plaću (neto plaća + doprinosi) i pomnožite s 12 mjeseci. Za obrt ili samostalnu djelatnost, navedite iznos mjesečnih doprinosa i pomnožite s 12. Planirate li zapošljavanje drugih osoba u drugoj godini poslovanja, navedite u drugom stupcu očekivanu bruto plaću za tu osobu/osobe (neto plaća + doprinosi) i pomnožite s 12.)\nTrošak rada u prvoj godini poslovanja | Mjesečni iznos | Godišnji iznos\nBruto plaća ili doprinosi za obrtnike / RPO | 0,00 | 0,00\nBruto plaća za zaposlenike | 0,00 | 0,00\nUkupni troškovi rada | 0,00 | 0,00",
+    "ostali_troskovi_god1_T4_1": "Tablica 4.1. Ostali troškovi u prvoj godini poslovanja (*Molimo navedite ostale očekivane troškove u prvoj godini poslovanja (npr. najamnina, usluge knjigovodstva, potrošni materijal, režijski troškovi, ostala davanja i sl.).\nOstali troškovi u prvoj godini poslovanja | Iznos mjesečni | Iznos godišnji\nBLANK | 0,00 | 0,00\nBLANK | 0,00 | 0,00\nBLANK | 0,00 | 0,00\nUkupno | 0,00 | 0,00\nDodaj novi red",
+    "ostali_troskovi_god2_T4_2": "Tablica 4.2. - Ostali troškovi u drugoj godini poslovanja (*Molimo navedite ostale očekivane troškove u drugoj godini poslovanja (npr. najamnina, usluge knjigovodstva, potrošni materijal, režijski troškovi, ostala davanja i sl.).\nOstali troškovi u prvoj godini poslovanja | Iznos mjesečni | Iznos godišnji\nBLANK | 0,00 | 0,00\nBLANK | 0,00 | 0,00\nBLANK | 0,00 | 0,00\nUkupno | 0,00 | 0,00\nDodaj novi red"
   },
   "3.7": {
-    "godisnji_prihodi": "Godišnji prihodi od prodaje",
-    "godisnji_troskovi": "Ukupni godišnji troškovi",
-    "dobit_prije_poreza": "Očekivana dobit prije oporezivanja",
-    "porez": "Porez na dobit (20%)",
-    "neto_dobit": "Očekivana neto dobit"
+    "izracun_dobit_prve_i_druge_godine": "Da biste izračunali očekivanu dobit u prvoj godini poslovanja, molimo Vas da unesete podatke iz tablice 2.1. i 2.2. koja prikazuje očekivane godišnje prihode te tablica 3.1., 3.2. i 4.1., 4.2. koje prikazuju očekivane godišnje troškove. Neto dobit je Vaša zarada od prodaje proizvoda i usluga koja ostaje nakon što su odbijeni svi troškovi i nakon što je plaćen porez na dobit/dohodak.U svrhu izračuna koristi se okvirna porezna stopa od 20% i ne predstavlja nužno jednu od trenutno važećih zakonskih poreznih stopa. Redak  4. popunjavaju svi podnositelji zahtjeva bez obzira na planirani pravni oblik registracije (obrti, trgovačka društva, samostalne djelatnosti i sl.)\nPredmet | Prva godina poslovanja | Druga godina poslovanja\nGodišnji prihodi od prodaje (tablica 2.1. i 2.2.) | 0,00 | 0,00\nUkupni godišnji troškovi (tablica 3.1. i 3.2. + 4.1. i 4.2.) | 0,00 | 0,00\nOčekivana dobit prije oporezivanja (redak 1. umanjiti za redak 2.) | 0,00 | 0,00\nPorez na dobit (redak 3. pomnožiti s 0,20) | 0,00 | 0,00\nOčekivana neto dobit (redak 3. umanjiti za redak 4.) | 0,00 | 0,00",
+    "ocekivana_neto_dobit_prva_godina": "Očekivana neto dobit (zarada) u prvoj godini poslovanja iznosi u €",
+    "ocekivana_neto_dobit_druga_godina": "Očekivananeto dobit (zarada) u drugoj godini poslovanja iznosi u €"
   },
   "4": {
-    "fiksni_iznos": "Fiksni iznos potpore",
-    "it_oprema": "Kupnja informatičke opreme (bez PDV-a)",
-    "ostala_oprema": "Kupnja ostale opreme",
-    "licence": "Kupnja/zakup licenciranih IT programa",
-    "fransize": "Kupnja franšiza",
-    "troskovnik_ukupno": "Ukupno"
+    "troskovnik": "Troškovnik\nIznos potpore za samozapošljavanje određuje se prema djelatnosti koju podnositelji zahtjeva namjeravaju registrirati, a sukladno propisanim kriterijima mjere, pri čemu sve djelatnosti nisu prihvatljive za financiranje.\nU navedenoj tablici navedite fiksni dio potpore u iznosu 5.000 €. Ukoliko je traženi iznos potpore veći od fiksnog iznosa, ostatak tablice popunite troškovima koji su vam potrebni za početak poslovanja, a prema popisu prihvatljivih troškova za 2025. godinu. Zbroj troškova u troškovniku ne smije biti manji od iznosa tražene potpore te se u njemu ne smiju nalaziti troškovi koje će podnositelji zahtjeva sami financirati. Svi troškovi navode se bez PDV-a. Potpora ne mora biti dodijeljena u traženom iznosu.\nVrsta troška | Iznos bez PDV-a\nFiksni iznos potpore | 5000,00\nKupnja nove opreme neophodne za obavljanje djelatnosti - alati/strojevi/tehnika | 0,00\nKupnja nove opreme neophodne za obavljanje djelatnosti - informatička oprema | 0,00\nKupnja nove opreme neophodne za obavljanje djelatnosti - ostala oprema | 0,00\nK­upnja ili zakup licenciranih IT programa | 0,00\nKupnja franšiza | 0,00\nUkupno | 0,00"
   },
   "5": {
-    "potvrda_fina": "Potvrda FINA o blokadi (obvezno, <7 dana)",
+    "potvrda_fina": "Potvrda o blokadi računa i novčanih sredstava ovršenika na osobno ime podnositelja zahtjeva, ne starija od 7 dana (potvrdu izdaje FINA na zahtjev osobe i bez naplate)",
     "izjava_nepodmirene": "Izjava o nepodmirenim obvezama (obvezno)",
-    "ponude_predracuni": "Ponude/predračuni po stavkama troškovnika (neobvezno, donosi bodove)",
-    "ostali_prilozi": "Ostali prilozi (dokazi o iskustvu/obrazovanju, pisma namjere, dokumenti)"
+    "ponude_predracuni": "Ponude/predračuni po stavkama troškovnika\nNavedeni prilog nije dio obvezne dokumentacije, no prilaganjem ponuda/predračuna ostvaruju se dodatni bodovi.\nPonuda na ime i OIB korisnika u iznosu variabilnih sredstava (iznos se racuna bez PDV-a).\nPriznaju se isključivo troškovi koji su navedeni kao prihvatljivi Uvjetima i načinima korištenja sredstava za provođenje mjera u 2025. godini, bez obzira na sadržaj ponude",
+    "ostali_prilozi": "Ostali prilozi (dokazi o formalnom/neformalnom radnom iskustvu, obrazovanju, pismo namjere,...)\nUkoliko posjedujete dodatnu dokumentaciju relevantnu za ocjenu poslovnog plana istu možete priložiti ovdje."
   }
 }
