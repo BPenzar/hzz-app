@@ -301,6 +301,16 @@ ${htmlParts}
                 "Generiraj primjer"
               )}
             </button>
+            <div aria-busy={isGenerating}>
+              {isGenerating ? 
+                ( 
+                <>
+                Generiranje primjera može trajati do 3 minute...<br />
+                Molimo za strpljenje (slobodno se vratite za 2 minute da bi provjerili rezultate).
+                </>
+                ) : ("")
+              }
+            </div>
           </div>
         </div>
 
