@@ -7,24 +7,54 @@ const store: Map<string, Job> = (globalThis as any).__jobs ?? new Map();
 (globalThis as any).__jobs = store;
 
 export async function POST(req: NextRequest) {
-  let body: any = null;
+  const ct = req.headers.get("content-type") || "";
+  if (!ct.includes("application/json")) {
+    return NextResponse.json(
+      { ok: false, error: "Content-Type must be application/json" },
+      { status: 415 },
+    );
+  }
+
+  let body: any;
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { jobId, ok, result, error } = body ?? {};
-  if (!jobId || typeof jobId !== "string") {
+  const jobId = typeof body?.jobId === "string" ? body.jobId : null;
+  const okFlag = typeof body?.ok === "boolean" ? body.ok : true;
+  const result = body?.result;
+  const incomingError = body?.error != null ? String(body.error) : undefined;
+
+  if (!jobId) {
     return NextResponse.json({ ok: false, error: "Missing jobId" }, { status: 400 });
   }
 
   const existing = store.get(jobId) ?? { status: "queued" as JobStatus };
-  if (ok === false || error) {
-    store.set(jobId, { status: "error", error: String(error ?? "unknown") });
+
+  if (okFlag === false || incomingError) {
+    store.set(jobId, { status: "error", error: incomingError ?? "unknown" });
   } else {
     store.set(jobId, { ...existing, status: "done", result });
   }
 
-  return NextResponse.json({ ok: true });
+  // ⭐ NOVO: ako je stigao result, echo baš njega kao array
+  if (typeof result !== "undefined") {
+    return new NextResponse(
+      JSON.stringify([result]),
+      { status: 200, headers: { "content-type": "application/json" } }
+    );
+  }
+
+  // fallback kad nema result-a
+  return NextResponse.json({ ok: true, jobId });
+}
+
+export async function GET(req: NextRequest) {
+  const jobId = new URL(req.url).searchParams.get("jobId");
+  if (!jobId) return NextResponse.json({ ok: false, error: "Missing jobId" }, { status: 400 });
+  const job = store.get(jobId);
+  if (!job) return NextResponse.json({ ok: false, error: "Not found" }, { status: 404 });
+  return NextResponse.json({ ok: true, jobId, ...job });
 }
