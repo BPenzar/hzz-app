@@ -5,19 +5,26 @@ import examplesJson from "../data/generated/hzz-examples.json";
 
 import type { UiSection, JsonSection, UiField, AllValues, SectionValues } from "./types";
 
+//since troskovnik is not long somehow...
+const LONG_KEYS = new Set(["troskovnik","izracun_dobit_prve_i_druge_godine"]);
+
 function toUiSections(structure: { sections: JsonSection[] }, questions: Record<string, Record<string,string>>): UiSection[] {
   return structure.sections.map((sec) => {
     const q = questions[sec.id] ?? {};
+
     const fields: UiField[] = sec.fields.map((f) => ({
       name: f.key,
       // ako postoji pitanje/duža etiketa u questions.json, koristi nju; inače label iz structure.json
       label: q[f.key] ?? f.label,
-      long: f.type === "textarea",
+      long: f.type === "textarea" || LONG_KEYS.has(f.key.toLowerCase()),
       required: f.required ?? false,
     }));
     return { id: sec.id, title: sec.title, fields };
+
   });
 }
+
+
 
 export const UI_SECTIONS: UiSection[] = toUiSections(structureJson as any, questionsJson as any);
 
