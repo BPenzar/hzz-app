@@ -12,3 +12,5 @@ export async function POST(req: NextRequest) {
   try { data = JSON.parse(text); } catch { data = { raw: text }; }
   return NextResponse.json({ ok: resp.ok, status: resp.status, n8n: data });
 }
+
+

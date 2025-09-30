@@ -1,15 +1,15 @@
 {
   "1": {
     "podrucni_ured": "Područna služba ZAGREB",
-    "ime": "BRUNO SEBASTIAN",
-    "prezime": "PENZAR",
-    "oib": "00357376233",
+    "ime": "Hans",
+    "prezime": "Maier",
+    "oib": "00000000000",
     "zanimanje": "Programer računalnih aplikacija.",
-    "datum_rodjenja": "28.10.1993.",
-    "adresa": "Ulica Đure Crnatka 24",
+    "datum_rodjenja": "01.01.1990.",
+    "adresa": "Ulica Primjera 1",
     "grad": "10 000 Zagreb",
-    "kontakt_tel": "+385 97 611 2569",
-    "kontakt_email": "penzar.bruno@gmail.com",
+    "kontakt_tel": "+385 91 000 0000",
+    "kontakt_email": "ime.prezime@example.com",
     "osnovna_skola": "August-Gräser-Schule (Frankfurt na Majni, Njemačka, 2004.)",
     "srednja_skola": "Schillerschule - Opća gimnazija (Frankfurt na Majni, Njemačka, 2012.)",
     "fakultet": "Sveučilište u Kölnu - Znanosti o medijama (medijske informatike) - Sveučilišni prvostupnik (Köln, 2018.)",
@@ -30,7 +30,7 @@
   "2": {
     "vrsta_subjekta": "obrt s paušalnim oporezivanjem",
     "struktura_vlasnistva": "Jedan vlasnik",
-    "sjediste": "Ulica Đure Crnatka 24, 10 000 Zagreb",
+    "sjediste": "Ulica Primjera 1, 10 000 Zagreb",
     "nkd": "62109",
     "iznos_trazene_potpore": "6.966,02 €"
   },
@@ -65,7 +65,7 @@
     "kako_znate_da_ce_biti_potražnja": "Potencijal i potrebu za ovakvim uslugama procijenio sam kroz razgovore s vlasnicima i menadžerima mikro i malih poduzeća, kao i kroz vlastito iskustvo u vođenju administrativnih timova.\n\nKao što sam vidio kroz rad u velikoj međunarodnoj kompaniji, administrativni zadaci u velikoj su mjeri još uvijek neautomatizirani te oduzimaju značajno vrijeme zaposlenika na jednostavnim i ponavljajućim poslovima. Uz to, većina manjih poduzetnika potvrdila mi je da svoje administrativne procese i dalje vodi ručno ili uz pomoć zastarjelih alata, što im dodatno povećava troškove i smanjuje učinkovitost. To jasno pokazuje da na tržištu postoji praznina za pristupačna digitalna rješenja koja omogućuju pojednostavljenje i automatizaciju poslovnih procesa.\n\nPovratne informacije od potencijalnih klijenata, kao i konkretan iskazani interes, ukazale su na spremnost da koriste rješenja koja donose brzu i mjerljivu korist – od uštede vremena i smanjenja grešaka do bolje preglednosti poslovanja. Primjena “prije i poslije” izvještaja kod svake implementacije dodatno osigurava da klijent odmah vidi ostvarene rezultate. Osim kao alat za akviziciju novih korisnika, ti izvještaji služe i kao dokaz mjerljivog povrata ulaganja, što poduzetnicima daje dodatnu sigurnost i potiče dugoročnu suradnju i razvoj partnerskih odnosa.\n\nS obzirom na opće trendove digitalizacije i sve veću potrebu MSP-ova za učinkovitijim poslovanjem uz niže troškove, uvjeren sam da će usluge biti prepoznate na tržištu i da će broj klijenata biti dovoljan za stabilno i uspješno poslovanje.",
     "kanali_promocije": "posjetnice; usmena reklama i preporuke; brošure i letci; plaćeni oglasi u novinama i časopisima; poslovni sajmovi; društvene mreže",
     "planirate_web_stranicu": "već je u izradi",
-    "adresa_web_stranice": "https://www.bsp-lab.dev/",
+    "adresa_web_stranice": "https://www.example.dev/",
     "dogovorena_suradnja": "Da",
     "dogovorena_suradnja_pisani_dokaz": "Da",
     "znate_gdje_nabaviti_opremu": "Da",
@@ -94,10 +94,11 @@
     "troskovnik": "Vrsta troška | Iznos bez PDV-a\nFiksni iznos potpore | 5000,00\nKupnja nove opreme neophodne za obavljanje djelatnosti - alati/strojevi/tehnika | 0,00\nKupnja nove opreme neophodne za obavljanje djelatnosti - informatička oprema | 1996,02\nKupnja nove opreme neophodne za obavljanje djelatnosti - ostala oprema | 0,00\nK­upnja ili zakup licenciranih IT programa | 0,00\nKupnja franšiza | 0,00\nUkupno | 6996,02"
   },
   "5": {
-    "potvrda_fina": "Potvda o blokadi računa i novčanih sredstava.pdf",
-    "izjava_nepodmirene": "Izjava o nepodmirenim obvezama — ispunjeno",
-    "ponude_predracuni": "Ponuda.pdf",
-    "ostali_prilozi": "08-COPC_LSS_Yellow_Belt_Certification.pdf; 03.2-Prekid_ugovora_o_radu-GESIS-Penzar.pdf; 06-Pismo_preporuke-Teleperformance.pdf; 04-Potvrda_o_radu-Sveučilište_u_Koelnu-ovjereni_pijevod.pdf; 02-Diploma-ovjereni_pijevod.pdf; 07-Nagrada_Digital_Humanities-ovjereni_pijevod.pdf; 05-Potvrda_o_radu-Teleperformance-ovjereni_pijevod.pdf; 01-Svjedodzba_o_Maturi-ovjereni_pijevod.pdf; 03.1-Ugovor_o_radu-GESIS-Penzar.pdf; 12_Potvrda o stanju duga.pdf; 02.2_Potvrda_Akademskog_stupca-ovjereni_pijevod.pdf; Femi - Pismo namjere-potpisano.pdf; Bruno-Penzar-Potvrda_o_Boravaku_2.pdf; Bruno-Penzar-Potvrda_o_Boravaku_1.pdf; Bruno-Penzar_Pasos.pdf; Bruno-Penzar-Osobna.pdf; Bruno-Penzar-Preslika_kartice_tekućeg_računa.pdf; Bruno_Penzar-Zivotopis.pdf"}
-}
+    "potvrda_fina": "potvrda_blokade_ra%C4%8Duna.pdf",
+    "izjava_nepodmirene": "izjava_nepodmirenih_obveza.pdf",
+    "ponude_predracuni": "ponuda.pdf",
+    "ostali_prilozi": "08-COPC_LSS_Yellow_Belt_Certification.pdf; 03.2-Prekid_ugovora_primjer.pdf; 06-Pismo_preporuke-Teleperformance.pdf; 04-Potvrda_o_radu-Sveučilište_u_Koelnu-ovjereni_prijevod.pdf; 02-Diploma-ovjereni_prijevod.pdf; 07-Nagrada_Digital_Humanities-ovjereni_prijevod.pdf; 05-Potvrda_o_radu-Teleperformance-ovjereni_prijevod.pdf; 01-Svjedodzba_o_Maturi-ovjereni_prijevod.pdf; 03.1-Ugovor_o_radu-GESIS-primjer.pdf; 12_Potvrda_o_stanju_duga.pdf; 02.2_Potvrda_Akademskog_stupca-ovjereni_prijevod.pdf; Pismo_namjere-potpisano.pdf; Potvrda_o_boravku_1.pdf; Potvrda_o_boravku_2.pdf; Putovnica_prijevod.pdf; Osobna_kartica_prijevod.pdf; Preslika_racuna.pdf; Zivotopis.pdf"
 
+  }
+}
 
