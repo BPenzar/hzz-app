@@ -156,35 +156,69 @@ export default function HzzPage() {
     }
   }
 
-  // šalje {examples, idea} prema /api/hzz-debug
+  // šalje {examples, idea} prema /api/hzz (async job) i polla status
   async function debugWebhook() {
     setIsGenerating(true);
     try {
+      // složi payload kao i prije
       const examples = Object.fromEntries(UI_SECTIONS.map((s: any) => [s.id, exampleFor(s.id) || {}]));
-      const payload = { examples, idea: idea?.trim() || null /*, cvB64: cvB64 ?? undefined */ };
+      const payload = { examples, idea: (idea?.trim() || null) };
 
-      const res = await fetch("/api/hzz-debug", {
+      // 1) startaj job
+      const start = await fetch("/api/hzz", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const json = await res.json();
+      const startJson = await start.json();
+      if (!start.ok || !startJson?.ok || !startJson?.jobId) {
+        console.error("Start job failed", startJson);
+        alert("Greška pri pokretanju generiranja.");
+        return;
+      }
 
-      const exMap = json?.n8n?.body?.examples ?? json?.n8n?.echo?.examples ?? json?.examples ?? null;
-      if (exMap && typeof exMap === "object") {
-        UI_SECTIONS.forEach((s: any) => setRight(s.id, blankFor(s.id), {} as any));
-        for (const s of UI_SECTIONS) {
-          const ex = exMap[s.id];
-          if (ex && typeof ex === "object") setRight(s.id, ex);
+      // 2) pollaj status
+      const jobId = startJson.jobId as string;
+      for (;;) {
+        await new Promise(r => setTimeout(r, 1500));
+        const res = await fetch(`/api/hzz/status?jobId=${encodeURIComponent(jobId)}`);
+        const js = await res.json();
+
+        if (js?.status === "done") {
+          const exMap =
+            js?.result?.examples ??
+            js?.examples ??
+            null;
+
+          if (exMap && typeof exMap === "object") {
+            UI_SECTIONS.forEach((s: any) => setRight(s.id, blankFor(s.id), {} as any));
+            for (const s of UI_SECTIONS) {
+              const ex = exMap[s.id];
+              if (ex && typeof ex === "object") setRight(s.id, ex);
+            }
+            setActive(UI_SECTIONS[0]?.id ?? "1");
+          } else {
+            console.warn("Nije vraćen očekivani 'examples' objekt:", js);
+            alert("Gotovo, ali nema očekivanih podataka.");
+          }
+          break;
         }
-        setActive(UI_SECTIONS[0]?.id ?? "1");
-      } else {
-        console.warn("Webhook odgovor nema 'examples' mapu.");
+
+        if (js?.status === "error") {
+          console.error("Job error:", js?.error);
+          alert("Greška u obradi.");
+          break;
+        }
+
+        // status 'queued' | 'processing' → nastavi pollati
       }
     } finally {
       setIsGenerating(false);
     }
   }
+
+
+
 
   function esc(s: string) {
     return String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

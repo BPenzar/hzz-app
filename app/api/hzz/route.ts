@@ -1,68 +1,48 @@
-// app/api/hzz/route.ts
-export async function POST(req: Request) {
-  // 1) Parsiraj ulazni JSON – ako je neispravan, vrati 400
-  let payload: any;
-  try {
-    payload = await req.json();
-  } catch {
-    return new Response(
-      JSON.stringify({ ok: false, error: "Body nije valjan JSON" }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
-    );
+import { NextRequest, NextResponse } from "next/server";
+import crypto from "node:crypto";
+
+type JobStatus = "queued" | "processing" | "done" | "error";
+type Job = { status: JobStatus; result?: unknown; error?: string };
+
+// shared in-memory store (na Vercelu volatilno)
+const store: Map<string, Job> = (globalThis as any).__jobs ?? new Map();
+(globalThis as any).__jobs = store;
+
+export async function POST(req: NextRequest) {
+  const n8nUrl = process.env.N8N_WEBHOOK_URL;
+  if (!n8nUrl) {
+    return NextResponse.json({ ok: false, error: "N8N not configured" }, { status: 503 });
   }
 
-  // 2) Provjeri URL
-  const url = process.env.N8N_WEBHOOK_URL;
-  if (!url) {
-    return new Response(
-      JSON.stringify({ ok: false, error: "N8N_WEBHOOK_URL missing" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
-  }
+  const input = await req.json().catch(() => ({} as Record<string, unknown>));
 
-  // 3) Pošalji prema n8n
-  let res: Response;
+  const jobId = crypto.randomUUID();
+  store.set(jobId, { status: "queued" });
+
+  const origin = process.env.CALLBACK_BASE_URL ?? req.nextUrl.origin;
+  const callbackUrl = `${origin}/api/hzz/callback`;
+
+  delete (input as any).jobId;
+  delete (input as any).callbackUrl;
+
+  const body = { ...input, jobId, callbackUrl };
+
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), 15_000);
+
   try {
-    res = await fetch(url, {
+    await fetch(n8nUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+      signal: controller.signal,
     });
-  } catch (err: any) {
-    return new Response(
-      JSON.stringify({ ok: false, error: `fetch to n8n failed: ${err?.message || String(err)}` }),
-      { status: 502, headers: { "Content-Type": "application/json" } }
-    );
+    store.set(jobId, { status: "processing" });
+    return NextResponse.json({ ok: true, jobId }, { status: 202 });
+  } catch (e: any) {
+    store.set(jobId, { status: "error", error: e?.message || String(e) });
+    return NextResponse.json({ ok: false, jobId, error: e?.message || String(e) }, { status: 502 });
+  } finally {
+    clearTimeout(t);
   }
-
-  // 4) Robusno pročitaj odgovor iz n8n
-  const ct = res.headers.get("content-type") || "";
-  let body: unknown = null;
-
-  try {
-    if (ct.includes("application/json")) {
-      body = await res.json();
-    } else {
-      const txt = await res.text();
-      try {
-        body = JSON.parse(txt); // ako je Text koji sadrži JSON
-      } catch {
-        body = txt || null;     // fallback: raw tekst
-      }
-    }
-  } catch (err: any) {
-    return new Response(
-      JSON.stringify({ ok: false, error: `parse n8n response failed: ${err?.message || String(err)}` }),
-      { status: 502, headers: { "Content-Type": "application/json" } }
-    );
-  }
-
-  // 5) Vrati rezultat; propagiraj status iz n8n
-  return new Response(
-    JSON.stringify({ ok: res.ok, status: res.status, n8n: body }),
-    {
-      status: res.ok ? 200 : res.status,
-      headers: { "Content-Type": "application/json" },
-    }
-  );
 }

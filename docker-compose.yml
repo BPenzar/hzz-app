@@ -7,6 +7,8 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
+      - CALLBACK_BASE_URL=http://nextjs:3000
+
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
